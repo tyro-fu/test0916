@@ -7,8 +7,8 @@ const bodyParser = require("body-parser");
 const config = require("./Utils/config");
 
 //引入cookie
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
+// const cookieParser = require("cookie-parser");
+// app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -22,14 +22,19 @@ app.all('*', function (req, res, next) {
 })
 
 // 获取访问ip
-function getClientIp(req) {
-    return req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress;
-};
+// function getClientIp(req) {
+//     return req.headers['x-forwarded-for'] ||
+//         req.connection.remoteAddress ||
+//         req.socket.remoteAddress ||
+//         req.connection.socket.remoteAddress;
+// };
 // 引入session
 // var session = require('express-session');
+
+const UserController=require('./Controller/UserController')
+app.post('/login',UserController.login)
+app.post('/register',UserController.registeUser)
+
 
 // 静态文件
 app.use(express.static("./public"));

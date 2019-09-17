@@ -1,0 +1,3 @@
+登录接口(post):url--http://localhost:8888/login 参数格式--name,password  返回一个对象,包含验证信息以及code码,code为1时为登录成功;登陆成功返回对象包含user对象,将这个对象存入vuex
+
+注册接口(post):url--http://localhost:8888/register 参数格式--name,password 返回注册状态,包含注册信息以及code码,code码为1时为注册成功
