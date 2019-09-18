@@ -1,11 +1,13 @@
 const ProductModel=require('../Model/ProductModel') 
+const ProductDetailModel=require('../Model/ProductDetailModel')
 class ProductService{
     constructor(){
         this.productModel=new ProductModel()
+        this.productDetailModel=new ProductDetailModel()
     }
     //获取全部商品
-    getProduct(call){
-        this.productModel.selectAll(res=>{
+    getProduct(type,call){
+        this.productModel.selectByType(type,res=>{
             call(res)
         })
     }
@@ -16,24 +18,20 @@ class ProductService{
         })
     }
     //添加商品
-    insert(name, img,price,info, call){
-        //检查商品是否已存在
-        this.productModel.selectByName(name,res=>{
-            let ob={
-                msg:"商品已存在",
-                code:-1
-            }
-            if(res.length>0){
-                call(ob);
-                return
-            }
+    insert(name,price,img,type,proCode,kind,prices, call){
+      
         //商品不存在执行插入操作
-            this.productModel.insert(name, img,price,info,res=>{
-                ob.msg='添加商品成功';
-                ob.code=1;
-                call(ob);
+            this.productModel.insert(name, price,img,type,res=>{
+                this.productDetailModel.insert(proCode,kind,prices,res=>{
+                    let ob={}
+                    ob.msg='添加商品成功';
+                    ob.code=1;
+                    call(ob);
+                })
+                
+  
             })
-        })
+  
 
     }
     //删除商品

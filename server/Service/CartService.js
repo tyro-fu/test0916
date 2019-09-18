@@ -4,16 +4,16 @@ class CartService{
         this.cartModel=new CartModel()
     }
 
-    insert(name,count,userId,price,menuId,img,call){
-        this.cartModel.selectBeforeInsert(userId,menuId,res=>{
+    insert(proId,userId,count,call){
+        this.cartModel.selectBeforeInsert(proId,userId,res=>{
             if(res.length==0){
-                this.cartModel.insert(name,count,userId,price,menuId,img,res=>{ 
+                this.cartModel.insert(proId,userId,count,res=>{ 
                     this.cartModel.selectByUserId(userId,res=>{
                         call(res)
                     })
                 })
             }else{
-                this.cartModel.updateCount(count,userId,menuId,res=>{
+                this.cartModel.updateCount(proId,userId,count,res=>{
                     this.cartModel.selectByUserId(userId,res=>{
                         call(res)
                     })
@@ -22,15 +22,15 @@ class CartService{
         })
        
     }
-    updateCounts(count,userId,menuId,call){
+    updateCounts(proId,userId,count,call){
         if(count==0){
-            this.cartModel.delete(userId,menuId,res=>{
+            this.cartModel.delete(proId,userId,res=>{
                 this.cartModel.selectByUserId(userId,res=>{
                     call(res)
                 })
             })
         }else{
-            this.cartModel.updateCount(count,userId,menuId,res=>{
+            this.cartModel.updateCount(proId,userId,count,res=>{
                 this.cartModel.selectByUserId(userId,res=>{
                     call(res)
                 })
