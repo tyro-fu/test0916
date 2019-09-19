@@ -1,31 +1,30 @@
 <template>
   <div>
     <div class="topBox">
-
       <LoginAndSign></LoginAndSign>
-      
+
       <div class="passportMain">
         <div class="smallpage">
           <div>
-            <img alt=""
+            <img
+              alt
               src="http://cdn.lzljmall.com/public/images/78/f4/b5/0ef8045929fb78309ebd628c5a7ef5ed1ff271db.jpg?1539238268#w"
             />
           </div>
           <div class="smallpage-R">
             <div class="signtitle">用户登录</div>
             <div class="signinput">
-                <div class="loginAndsign">
-              <el-form ref="form" :model="form" label-position="left" label-width="60px">
-                  
+              <div class="loginAndsign">
+                <el-form ref="form" :model="form" label-position="left" label-width="60px">
                   <el-input v-model="form.name" placeholder="用户名/邮箱地址/手机号" class="inputBox"></el-input>
-           
+
                   <el-input v-model="form.pwd" placeholder="填写密码" class="inputBox" show-password></el-input>
-           
-                <el-form-item class="inputBox">
-                  <el-button type="primary" @click="onSubmit">登录</el-button>
-                  <el-button @click="onRegister">注册</el-button>
-                </el-form-item>
-              </el-form>
+
+                  <el-form-item class="inputBox">
+                    <el-button type="primary" @click="onSubmit">登录</el-button>
+                    <el-button @click="onRegister">注册</el-button>
+                  </el-form-item>
+                </el-form>
               </div>
             </div>
           </div>
@@ -35,14 +34,16 @@
   </div>
 </template>
 <script>
-import LoginAndSign from '../../components/loginandsign'
+import LoginAndSign from "../../components/loginandsign";
+import axios from "axios";
+import Qs from "qs";
+// import net from "../../utils/net";
 export default {
-    components: {
-        LoginAndSign
-    },
+  components: {
+    LoginAndSign
+  },
   data() {
     return {
-    
       form: {
         name: "",
         pwd: ""
@@ -50,11 +51,28 @@ export default {
     };
   },
   methods: {
-    onSubmit(){},
+    onSubmit() {
+        window.console.log("12")
+
+      axios.post("http://localhost:8888/login", Qs.stringify({
+        name: this.form.name,
+        password: this.form.pwd
+      })).then(res=>{
+        window.console.log("1",res)
+      });
+      // net
+      //   .post("/login", {
+      //     name: this.form.name,
+      //     password: this.form.pwd
+      //   })
+      //   .then(res => {
+      //     window.console.log("11",res);
+      //   });
+    },
     onRegister() {
       this.$router.push("/sign");
     }
-  },
+  }
 };
 </script>
 <style>
@@ -142,18 +160,18 @@ body {
   width: 340px;
   height: 455px;
   background-color: #ffffff;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   padding-top: 10px;
 }
-.loginAndsign{
-    width: 278px;
-    height: 300px;
-    margin: 0 auto;
-    display: flex;
-    /* align-items: flex-end; */
+.loginAndsign {
+  width: 278px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  /* align-items: flex-end; */
 }
-.inputBox{
-    margin-top: 20px;
-    margin-bottom: 10px;
+.inputBox {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 </style>

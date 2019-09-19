@@ -55,7 +55,7 @@ export default {
     },
      methods: {
     submitForm(e){
-      console.log(e)
+      window.console.log(e)
     },
     ToLogin() {
       this.$router.push("/login");

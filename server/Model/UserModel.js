@@ -25,7 +25,7 @@ class UserModel extends SqlBase {
     //查询用户
     selectByName(name, callback) {
         //编写sql语句
-        let sql = `select * from 916user where name="${name}"`;
+        let sql = `select * from 916user where username="${name}"`;
         //查询数据
         this.connection.query(sql, function (err, result) {
             if (err) {

@@ -33,26 +33,26 @@ app.all('*', function (req, res, next) {
 
 
 //引入用户登录注册模块
-// const UserController=require('./Controller/UserController')
-// app.post('/login',UserController.login)
-// app.post('/register',UserController.registeUser)
+const UserController=require('./Controller/UserController')
+app.post('/login',UserController.login)
+app.post('/register',UserController.registeUser)
 
-// //引入商品模块
-// const ProductController=require('./Controller/ProductController')
-// app.get('/getProduct',ProductController.getProductByType)
-// app.get('/source',ProductController.source)
-// app.get('/insert',ProductController.insert)
+//引入商品模块
+const ProductController=require('./Controller/ProductController')
+app.get('/getProduct',ProductController.getProductByType)
+app.get('/source',ProductController.source)
+app.get('/insert',ProductController.insert)
 
-// //引入商品详情模块
-// const ProductDetailController=require('./Controller/ProductDetailController')
-// app.get('/getDetail',ProductDetailController.getDetail)
+//引入商品详情模块
+const ProductDetailController=require('./Controller/ProductDetailController')
+app.get('/getDetail',ProductDetailController.getDetail)
 
 
-// //引入购物车模块
-// const CartController=require('./Controller/CartController')
-// app.get('/addCart',CartController.insert)
-// app.get('/getCart',CartController.getCart)
-// app.get('/updateCart',CartController.updateCount)
+//引入购物车模块
+const CartController=require('./Controller/CartController')
+app.get('/addCart',CartController.insert)
+app.get('/getCart',CartController.getCart)
+app.get('/updateCart',CartController.updateCount)
 
 // 静态文件
 app.use(express.static("./public"));
