@@ -6,7 +6,7 @@ class UserModel extends SqlBase {
     //插入用户
     insert(name, password, call) {
         //1,编写sql语句
-        var sql = `INSERT INTO 916user(name,password,address,num,money) VALUES('${name}','${password}')`;
+        var sql = `INSERT INTO 916user(username,password) VALUES('${name}','${password}')`;
         //2,进行插入操作
         /**
          *query，mysql语句执行的方法
@@ -25,7 +25,7 @@ class UserModel extends SqlBase {
     //查询用户
     selectByName(name, callback) {
         //编写sql语句
-        let sql = `select * from 916user where name="${name}"`;
+        let sql = `select * from 916user where username="${name}"`;
         //查询数据
         this.connection.query(sql, function (err, result) {
             if (err) {
