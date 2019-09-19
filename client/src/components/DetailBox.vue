@@ -51,7 +51,9 @@
             <div>
               <el-row>
                 <el-col :span="4" class="center label">净含量：</el-col>
-                <el-col :span="20" class="label"><el-button v-hidden="load" v-for="(item,index) in item" :key="index"></el-button></el-col>
+                <el-col :span="20" class="label">
+                  <el-button v-hidden="load" v-for="(item,index) in item" :key="index"></el-button>
+                </el-col>
               </el-row>
             </div>
             <div>
@@ -96,36 +98,35 @@
   </div>
 </template>
 <script>
-import net from "../utils/net"
+import net from "../utils/net";
 export default {
   name: "detailBox",
   data() {
     return {
       num1: 0,
       oPro: this.$store.state.oPro,
-      index:0,
+      index: 0,
       load: true
     };
   },
   methods: {
-    handleCar(){
-
-    },
-    handleBuy(){
-
-    },
+    handleCar() {},
+    handleBuy() {},
     handleChange(e) {
       window.console.log(e);
     }
   },
-  update() {
+  createds() {
     if (this.oPro != null) {
-        net.get("http://localhost:8888",{id:this.oPro.id}).then(res=>{
-            let data=JSON.parse(res.data[0])
-            this.oPro.proCode=data.proCode.split("=");
-            this.oPro.kind=data.kind.split("=");
-            this.oPro.price=data.price.split("=");
-        })
+      net
+        .get("http://localhost:8888/getDetail", { id: this.oPro.id })
+        .then(res => {
+          // let data=JSON.parse(res.data[0])
+          // this.oPro.proCode=data.proCode.split("=");
+          // this.oPro.kind=data.kind.split("=");
+          // this.oPro.price=data.price.split("=");
+          console.log("1",res);
+        });
     }
   }
 };

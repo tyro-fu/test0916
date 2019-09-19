@@ -10,11 +10,10 @@
       </p>
       <el-button>el-button</el-button>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
 
     <!-- <Login></Login> -->
-  <!-- <Sign></Sign> -->
-  
+    <!-- <Sign></Sign> -->
   </div>
 </template>
 
@@ -29,15 +28,15 @@ export default {
   // Sign
   },
    created() {
-    this.$router.push("/login")
   }
 }
+
+
 </script>
 
 <style>
-body{
+body {
   margin: 0;
   padding: 0;
 }
-
 </style>
