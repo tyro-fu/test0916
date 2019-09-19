@@ -1,6 +1,6 @@
 <template>
   <div class="home">
- <!-- <Login></Login> -->
+ <router-view></router-view>
   </div>
 </template>
 
@@ -13,6 +13,9 @@ export default {
   components: {
     // HelloWorld,
     // Login
+  },
+  created() {
+    this.$router.push("/login")
   }
 }
 </script>
