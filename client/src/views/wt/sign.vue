@@ -54,6 +54,9 @@ export default {
         LoginAndSign
     },
      methods: {
+    submitForm(e){
+      console.log(e)
+    },
     ToLogin() {
       this.$router.push("/login");
     }
@@ -63,8 +66,6 @@ export default {
       ruleForm: {
         name: "",
         password: "",
-        num: "",
-        address: ""
       },
       
       rules: {
