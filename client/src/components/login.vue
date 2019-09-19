@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="topright">
-          <div>我的订单</div>
+          <div><router-link to="/detail">我的订单</router-link></div>
           <div class="f1">|</div>
           <div>会员中心</div>
           <div class="f1">|</div>
