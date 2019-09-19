@@ -35,9 +35,7 @@
 </template>
 <script>
 import LoginAndSign from "../../components/loginandsign";
-import axios from "axios";
-import Qs from "qs";
-// import net from "../../utils/net";
+import net from "../../utils/net";
 export default {
   components: {
     LoginAndSign
@@ -52,22 +50,14 @@ export default {
   },
   methods: {
     onSubmit() {
-        window.console.log("12")
-
-      axios.post("http://localhost:8888/login", Qs.stringify({
-        name: this.form.name,
-        password: this.form.pwd
-      })).then(res=>{
-        window.console.log("1",res)
-      });
-      // net
-      //   .post("/login", {
-      //     name: this.form.name,
-      //     password: this.form.pwd
-      //   })
-      //   .then(res => {
-      //     window.console.log("11",res);
-      //   });
+      net
+        .post("/login", {
+          name: this.form.name,
+          password: this.form.pwd
+        })
+        .then(res => {
+          window.console.log("11", res);
+        });
     },
     onRegister() {
       this.$router.push("/sign");

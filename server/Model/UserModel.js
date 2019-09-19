@@ -6,7 +6,7 @@ class UserModel extends SqlBase {
     //插入用户
     insert(name, password, call) {
         //1,编写sql语句
-        var sql = `INSERT INTO 916user(name,password,address,num,money) VALUES('${name}','${password}')`;
+        var sql = `INSERT INTO 916user(username,password) VALUES('${name}','${password}')`;
         //2,进行插入操作
         /**
          *query，mysql语句执行的方法
