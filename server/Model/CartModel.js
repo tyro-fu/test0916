@@ -6,7 +6,7 @@ class CartModel extends SqlBase {
     //获取用户的购物车
     selectByUserId(userId,call){
           //编写sql语句
-          let sql = `select * from cart where user_id ='${userId}' and ispay = 0`;
+          let sql = `select * from 916shopCar where userId ='${userId}'`;
           //查询数据
           this.connection.query(sql, function (err, result) {
               if (err) {
@@ -17,22 +17,22 @@ class CartModel extends SqlBase {
           });
     }
     //获取用户历史订单
-    selcetPayed(userId,call){
-         //编写sql语句
-         let sql = `select * from cart where user_id ='${userId}' and ispay = 1`;
-         //查询数据
-         this.connection.query(sql, function (err, result) {
-             if (err) {
-                 console.log(err.message);
-                 return;
-             }
-             call(result);
-         });
-    }
+    // selcetPayed(userId,call){
+    //      //编写sql语句
+    //      let sql = `select * from cart where user_id ='${userId}' and ispay = 1`;
+    //      //查询数据
+    //      this.connection.query(sql, function (err, result) {
+    //          if (err) {
+    //              console.log(err.message);
+    //              return;
+    //          }
+    //          call(result);
+    //      });
+    // }
     //添加购物车
-    insert(name,count,userId,price,menuId,img,call) {
+    insert(proId,userId,count,call) {
          //1,编写sql语句
-        var sql = `INSERT INTO cart(name,count,user_id,price,menu_id,img) VALUES('${name}','${count}','${userId}','${price}','${menuId}','${img}')`;
+        var sql = `INSERT INTO 916shopCar(proId,userId,count) VALUES('${proId}','${userId}','${count}')`;
         //2,进行插入操作
         /**
          *query，mysql语句执行的方法
@@ -48,9 +48,9 @@ class CartModel extends SqlBase {
         });
     }
     //插入购物车之前检查用户是否已有该菜品
-    selectBeforeInsert(userId,menuId,call){
+    selectBeforeInsert(proId,userId,call){
         //编写sql语句
-        let sql = `select * from cart where user_id ='${userId}' and menu_id = '${menuId}' and ispay = 0`;
+        let sql = `select * from 916shopCar where userId ='${userId}' and proId = '${proId}'`;
         //查询数据
         this.connection.query(sql, function (err, result) {
             if (err) {
@@ -61,9 +61,9 @@ class CartModel extends SqlBase {
         });
     }
     //更新购物车菜品的数量
-    updateCount(count,userId,menuId,call) {
+    updateCount(proId,userId,count,call) {
         //编写sql语句
-        let sql = `UPDATE cart SET count =${count} WHERE user_id = '${userId}' and menu_id = '${menuId}' and ispay = 0`;
+        let sql = `UPDATE 916shopCar SET count =${count} WHERE proId = '${proId}' and userId = '${userId}'`;
         //5，更新操作
         this.connection.query(sql, function (err, result) {
             if (err) {
@@ -74,9 +74,9 @@ class CartModel extends SqlBase {
         });
     }
     //删除购物车菜品
-    delete(userId,menuId,call){
+    delete(proId,userId,call){
           //编写sql语句
-          var sql = `delete from cart WHERE user_id = '${userId}' and menu_id = '${menuId}' and ispay = 0`;
+          var sql = `delete from 916shopCar WHERE proId = '${proId}' and userId = '${userId}'`;
           this.connection.query(sql, function (err, result) {
               if (err) {
                   console.log('[INSERT ERROR] - ', err.message);
@@ -86,18 +86,18 @@ class CartModel extends SqlBase {
           });
     }
     //结算之后修改isPay字段的状态
-    updateIspay(userId,menuId,call){
-        //编写sql语句
-        let sql = `UPDATE cart SET ispay = 1 WHERE user_id = '${userId}' and menu_id = '${menuId}' and ispay = 0`;
-        console.log(sql)
-        //5，更新操作
-        this.connection.query(sql, function (err, result) {
-            if (err) {
-                console.log('[INSERT ERROR] - ', err.message);
-                return;
-            }
-            call(result);
-        });
-    }
+    // updateIspay(userId,menuId,call){
+    //     //编写sql语句
+    //     let sql = `UPDATE cart SET ispay = 1 WHERE user_id = '${userId}' and menu_id = '${menuId}' and ispay = 0`;
+    //     console.log(sql)
+    //     //5，更新操作
+    //     this.connection.query(sql, function (err, result) {
+    //         if (err) {
+    //             console.log('[INSERT ERROR] - ', err.message);
+    //             return;
+    //         }
+    //         call(result);
+    //     });
+    // }
 }
 module.exports=CartModel;

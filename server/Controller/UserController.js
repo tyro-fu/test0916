@@ -3,6 +3,15 @@ let UserService = require('../Service/UserService');
 // const formidable = require('formidable');
 module.exports.login = function (req, res) {
     // //解析提交数据
+    let name = req.body.name;
+    let password = req.body.password;
+    let userService = new UserService();
+        //验证用户是否合法
+        userService.login(name, password, function (data) {
+            //如果用户合法
+            res.json(data);
+        });
+        
     // var form = new formidable.IncomingForm();
     // form.parse(req, (err, fields, files) => {
     //     var name = fields.name;
@@ -16,14 +25,7 @@ module.exports.login = function (req, res) {
     //     });
 
     // });
-    let name = req.body.name;
-    let password = req.body.password;
-    let userService = new UserService();
-        //验证用户是否合法
-        userService.login(name, password, function (data) {
-            //如果用户合法
-            res.json(data);
-        });
+ 
 
 }
 module.exports.registeUser = function (req, res) {
