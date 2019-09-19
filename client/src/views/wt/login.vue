@@ -1,38 +1,9 @@
 <template>
   <div>
     <div class="topBox">
-<<<<<<< HEAD:client/src/views/wt/login.vue
 
       <LoginAndSign></LoginAndSign>
       
-=======
-      <div class="top">
-        <div class="topLeft">
-          <div>您好，欢迎来到泸州老窖官方商城！</div>
-          <div class="logintext">
-            <div>登录</div>
-            <div class="f1">|</div>
-            <div>注册</div>
-          </div>
-        </div>
-        <div class="topright">
-          <div><router-link to="/detail">我的订单</router-link></div>
-          <div class="f1">|</div>
-          <div>会员中心</div>
-          <div class="f1">|</div>
-          <div>帮助中心</div>
-          <div class="f1">|</div>
-          <div>我的购物车</div>
-        </div>
-      </div>
-      <div class="logoBox">
-        <div class="logo">
-          <img
-            src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
-          />
-        </div>
-      </div>
->>>>>>> 71205d36d8b13695ccecc4a29eb091a30ad655e1:client/src/components/login.vue
       <div class="passportMain">
         <div class="smallpage">
           <div>
