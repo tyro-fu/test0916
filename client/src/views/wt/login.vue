@@ -7,7 +7,7 @@
       <div class="passportMain">
         <div class="smallpage">
           <div>
-            <img
+            <img alt=""
               src="http://cdn.lzljmall.com/public/images/78/f4/b5/0ef8045929fb78309ebd628c5a7ef5ed1ff271db.jpg?1539238268#w"
             />
           </div>
@@ -50,6 +50,7 @@ export default {
     };
   },
   methods: {
+    onSubmit(){},
     onRegister() {
       this.$router.push("/sign");
     }
