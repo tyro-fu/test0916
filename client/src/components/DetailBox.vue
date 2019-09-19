@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <!-- <el-row>
+    <el-row>
       <el-col :span="10">
         <div class="block">
           <el-carousel>
@@ -22,13 +22,13 @@
             <div>
               <el-row>
                 <el-col :span="4" class="center label">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</el-col>
-                <el-col :span="20" class="label red-color">￥{{load?"":oPro.price}}</el-col>
+                <el-col :span="20" class="label red-color">￥{{load?"":oPro.price[index]}}</el-col>
               </el-row>
             </div>
             <div>
               <el-row>
                 <el-col :span="4" class="center label">商品货号:</el-col>
-                <el-col :span="20" class="label">￥{{load?"":oPro.}}</el-col>
+                <el-col :span="20" class="label">{{load?"":oPro.kind[index]}}</el-col>
               </el-row>
             </div>
             <div>
@@ -51,7 +51,7 @@
             <div>
               <el-row>
                 <el-col :span="4" class="center label">净含量：</el-col>
-                <el-col :span="20" class="label">{{load?"":oPro.}}</el-col>
+                <el-col :span="20" class="label"><el-button v-hidden="load" v-for="(item,index) in item" :key="index"></el-button></el-col>
               </el-row>
             </div>
             <div>
@@ -71,10 +71,10 @@
             <div>
               <el-row>
                 <el-col :span="8" class="center label">
-                  <el-button type="danger" plain>立即购买</el-button>
+                  <el-button type="danger" plain @click="handleBuy">立即购买</el-button>
                 </el-col>
                 <el-col :span="8" class="center label">
-                  <el-button type="default" icon="el-icon-sold-out" plain>加入购物车</el-button>
+                  <el-button type="default" icon="el-icon-sold-out" @click="handleCar" plain>加入购物车</el-button>
                 </el-col>
               </el-row>
             </div>
@@ -92,33 +92,41 @@
           </div>
         </div>
       </el-col>
-    </el-row> -->
+    </el-row>
   </div>
 </template>
 <script>
-// import net from "../utils/net"
+import net from "../utils/net"
 export default {
   name: "detailBox",
   data() {
     return {
       num1: 0,
       oPro: this.$store.state.oPro,
+      index:0,
       load: true
     };
   },
   methods: {
+    handleCar(){
+
+    },
+    handleBuy(){
+
+    },
     handleChange(e) {
       window.console.log(e);
     }
   },
   update() {
-    // if (this.oPro != null) {
-    //     net.get("http://localhost:8888",{id:this.oPro.id}).then(res=>{
-    //         let data=JSON.parse(res.data[0])
-    //         this.oPro.proCode=data.proCode;
-    //         this.
-    //     })
-    // }
+    if (this.oPro != null) {
+        net.get("http://localhost:8888",{id:this.oPro.id}).then(res=>{
+            let data=JSON.parse(res.data[0])
+            this.oPro.proCode=data.proCode.split("=");
+            this.oPro.kind=data.kind.split("=");
+            this.oPro.price=data.price.split("=");
+        })
+    }
   }
 };
 </script>
