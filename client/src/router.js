@@ -8,7 +8,6 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-<<<<<<< HEAD
     {
       path:'/',
       name:'cart',
@@ -17,18 +16,6 @@ export default new Router({
     {
       path:'/sign',
       name:'sign',
-=======
-
-    {
-      path: '/',
-      name: 'login',
-      component: Login
-    },
-
-    {
-      path: '/sign',
-      name: 'sign',
->>>>>>> c3f8053c9df9f932092ea182472c77f3d1191ea3
       component: Sign
     }
   ]

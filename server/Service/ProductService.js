@@ -8,7 +8,16 @@ class ProductService{
     //获取全部商品
     getProduct(type,call){
         this.productModel.selectByType(type,res=>{
-            call(res)
+            res.forEach((item,index)=>{
+                this.productDetailModel.selectById(item.id,ob=>{
+                    console.log(ob);
+                    item.detail=ob
+                    if (index==res.length-1) {
+                        call(res)
+                    }
+                })
+            })
+           
         })
     }
     //通过id获取商品信息

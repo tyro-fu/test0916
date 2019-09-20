@@ -15,7 +15,7 @@ url是请求地址 参数格式就是需要发送到后端的参数的名字
 
 获取购物车数据接口(get):url--http://localhost:8888/getCart 参数格式--userId(用户id)  返回对应用户的购物车数据
 
-添加到购物车接口(get):url--http://localhost:8888/addCart 参数格式--proId(商品id) userId(用户id) count(购物车数量) 返回添加后的购物车数据
+添加到购物车接口(get):url--http://localhost:8888/addCart 参数格式--proId(商品id) userId(用户id) count(购物车数量) img(商品第一张图) price(添加的商品价格) kind(添加的商品含量) name(添加的商品名)  返回添加后的购物车数据
 
 更新购物车数量接口(get):url--http://localhost:8888/updateCart 参数格式--proId(商品id) userId(用户id) count(改变后的购物车数量) 返回更新后的购物车数据
 
