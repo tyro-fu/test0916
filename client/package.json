@@ -9,7 +9,13 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+<<<<<<< HEAD
     "element-ui": "^2.12.0",
+=======
+    "element-ui": "^2.4.5",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+>>>>>>> 4875d2226980124a629118ed19af4f8670aaac6e
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -48,5 +54,10 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -1,0 +1,21 @@
+url是请求地址 参数格式就是需要发送到后端的参数的名字
+
+
+登录接口(post):url--http://localhost:8888/login 参数格式--name(用户名),password(用户密码)  返回一个对象,包含验证信息以及code码,code为1时为登录成功;登陆成功返回对象包含user对象,将这个对象存入vuex
+
+注册接口(post):url--http://localhost:8888/register 参数格式--name(用户名),password(用户密码) 返回注册状态,包含注册信息以及code码,code码为1时为注册成功
+
+
+
+获取商品接口(get):url--http://localhost:8888/getProduct 参数格式--type(商品类型) 获取全部商品时传空字符串  返回根据type查询到的商品信息
+
+搜索商品接口(get):url--http://localhost:8888/source 参数格式--name(商品名)  返回相应搜索内容的商品信息
+
+商品详情接口(get):url--http://localhost:8888/getDetail 参数格式--id(商品id)  返回对应id的商品详情信息(数组,取下标0进行使用)
+
+获取购物车数据接口(get):url--http://localhost:8888/getCart 参数格式--userId(用户id)  返回对应用户的购物车数据
+
+添加到购物车接口(get):url--http://localhost:8888/addCart 参数格式--proId(商品id) userId(用户id) count(购物车数量) 返回添加后的购物车数据
+
+更新购物车数量接口(get):url--http://localhost:8888/updateCart 参数格式--proId(商品id) userId(用户id) count(改变后的购物车数量) 返回更新后的购物车数据
+

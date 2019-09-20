@@ -1,6 +1,6 @@
 import axios from 'axios'
 import qs from 'qs';
-const serverUrl = "http://localhost:8899";
+const serverUrl = "http://localhost:8888";
 let net = {
     get: "",
     post: "",

@@ -1,0 +1,247 @@
+<template>
+    <div>
+          <div class="top">
+        <div class="topLeft">
+          <div>您好，欢迎来到泸州老窖官方商城！</div>
+          <div class="logintext">
+            <div @click="toLogin" class="change">登录</div>
+            <div class="f1">|</div>
+            <div @click="toSign" class="change">注册</div>
+          </div>
+        </div>
+        <div class="topright">
+          <div>我的订单</div>
+          <div class="f1">|</div>
+          <div>会员中心</div>
+          <div class="f1">|</div>
+          <div>帮助中心</div>
+          <div class="f1">|</div>
+          <div>我的购物车</div>
+        </div>
+      </div>
+      <div class="logoBox">
+        <div class="logo">
+          <div class="logiImg"><img 
+            src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
+          /></div>
+          <div class="iput">
+  <div><el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+   
+      
+       
+ 
+    <el-button slot="append" icon="el-icon-search">搜索</el-button>
+  </el-input>
+  </div>
+  <div class="inpText">
+      <div>国窖1573</div>
+          <div class="f1">|</div>
+          <div>特曲</div>
+          <div class="f1">|</div>
+          <div>窖龄30</div>
+          <div class="f1">|</div>
+          <div>头曲</div>
+  </div>
+</div>
+        </div>
+        
+      </div>
+      <!-- <div class="nav">
+          <div class="navBar">
+              <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+ 
+  <el-submenu index="2" class="AllGoods">
+   <template slot="title" class="AllGoodsBox" >全部商品分类</template>
+   <el-submenu index="2-1">
+      <template slot="title">国窖1573</template>
+      <el-menu-item index="2-1-1">经典系列</el-menu-item>
+      <el-menu-item index="2-1-2">其他</el-menu-item>
+  
+    </el-submenu>
+    <el-submenu index="2-2">
+      <template slot="title">窖龄</template>
+      <el-menu-item index="2-2-1">窖龄30</el-menu-item>
+      <el-menu-item index="2-2-2">窖龄60</el-menu-item>
+      <el-menu-item index="2-2-3">窖龄90</el-menu-item>
+    </el-submenu>
+    <el-submenu index="2-3">
+      <template slot="title">特曲</template>
+      <el-menu-item index="2-3-1">经典系列</el-menu-item>
+      <el-menu-item index="2-3-2">其他</el-menu-item>
+
+    </el-submenu>
+    <el-submenu index="2-4">
+      <template slot="title">头曲</template>
+      <el-menu-item index="2-4-1">畅想中国60年</el-menu-item>
+      <el-menu-item index="2-4-2">其他</el-menu-item>
+ 
+    </el-submenu>
+     <el-submenu index="2-5">
+      <template slot="title">高端定制</template>
+      <el-menu-item index="2-5-1">高端定制</el-menu-item>
+      <el-menu-item index="2-5-2">常规定制</el-menu-item>
+
+    </el-submenu>
+    
+  </el-submenu>
+
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">首页</a></el-menu-item>
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">国窖1573</a></el-menu-item>
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">窖龄酒</a></el-menu-item>
+    <el-menu-item  class="otherGoods"><a href="#" target="_blank">特曲</a></el-menu-item>
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">头窖藏瓶</a></el-menu-item>
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">桃花醉</a></el-menu-item>
+    <el-menu-item  class="otherGoods"><a href="#" target="_blank">所有商品</a></el-menu-item>
+  
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">百调</a></el-menu-item>
+  <el-menu-item  class="otherGoods"><a href="#" target="_blank">热销推荐</a></el-menu-item>
+
+</el-menu>
+          </div>
+      </div> -->
+    </div>
+</template>
+<script>
+
+export default {
+     data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+     methods: {
+    toLogin() {
+      this.$router.push("/login");
+    },
+    toSign() {
+      this.$router.push("/sign");
+    }
+
+  },
+}
+</script>
+<style scoped>
+a{
+    text-decoration: none;
+}
+body {
+  background-color: #f8f8f8;
+}
+.topBox {
+  width: 100%;
+  height: 30px;
+  background-color: #f8f8f8;
+}
+.top {
+  margin: 0 auto;
+
+  width: 1200px;
+  height: 30px;
+}
+.topLeft {
+  width: 280px;
+  height: 30px;
+  /* background-color: blueviolet; */
+  float: left;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+
+.logintext {
+  margin-left: 20px;
+  display: flex;
+  font-size: 12px;
+}
+.f1 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.topright {
+  height: 30px;
+  /* width: 340px; */
+  /* background-color: brown; */
+  float: right;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+.logoBox {
+  height: 130px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: #ddd;
+  box-shadow: 2px 2px 5px #eaeaea;
+  display: flex;
+
+}
+.logo {
+  width: 1200px;
+
+  margin: 0px auto;
+  padding-top: 15px; 
+    display: flex;
+}
+.logiImg{
+    width: 200px;
+    height: 99px;
+}
+.iput{
+    width: 540px;
+    height: 38px;
+    /* background: palegreen; */
+    margin-left: 150px;
+    margin-top: 13px;
+    
+}
+.inpText{
+    display: flex;
+      font-size: 12px;
+      color: #666;
+}
+/* .input-with-select{
+        border: 2px solid #d00a00;
+} */
+/* .inpBut{
+        background-color: #d00a00;
+} */
+.nav{
+    width: 100%;
+   line-height: 60px;
+    background-color: #fff;
+    border-bottom: 2px solid #d00a00;
+
+}
+.navBar{
+    width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    background-color: #f8f8f8;
+}
+.el-menu-demo{
+width: 1200px;
+height: 60px;
+}
+.AllGoods{
+   color: #fff;
+    font-size: 14px;
+    width: 200px;
+    padding-left: 0;
+    background-color: #d00a00;
+    text-align: center;
+    height: 60px;
+    overflow:hidden;
+
+}
+.AllGoods >>> .AllGoodsBox  {
+     width: 200px;
+       height: 38px !important;
+}
+.change{
+  cursor: pointer;
+}
+/* .otherGoods{
+      background-color: #d00a00;
+} */
+</style>
