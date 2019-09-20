@@ -72,7 +72,7 @@
   height: 624px;
 }
 .fourth_pic{
-    background: url(http://cdn.lzljmall.com/public/images/3b/58/47/0b3e1bd09f2afc421ba9f8f949119aebab0a758e.jpg?1510818110#h) center top no-repeat;
+    background: url(http://cdn.lzljmall.com/public/images/44/aa/31/e89015a90723e3e1a8e8bdf2c87dc397f07a0962.jpg?1510818270#h) center top no-repeat;
     text-align: center;
     width: 100%;
     height: 6292px;
