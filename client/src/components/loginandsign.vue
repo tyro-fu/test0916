@@ -4,9 +4,9 @@
         <div class="topLeft">
           <div>您好，欢迎来到泸州老窖官方商城！</div>
           <div class="logintext">
-            <div>登录</div>
+            <div @click="toLogin" class="change">登录</div>
             <div class="f1">|</div>
-            <div>注册</div>
+            <div @click="toSign"  class="change"> 注册</div>
           </div>
         </div>
         <div class="topright">
@@ -31,7 +31,16 @@
 <script>
 export default {
  
-    name:"LoginandSign"
+    name:"LoginandSign",
+     methods: {
+    toLogin() {
+      this.$router.push("/login");
+    },
+    toSign() {
+      this.$router.push("/sign");
+    }
+
+  },
 };
 </script>
 <style>
@@ -89,5 +98,8 @@ body {
   height: 130px;
   margin: 0px auto;
   padding-top: 15px; 
+}
+.change{
+  cursor: pointer;
 }
 </style>

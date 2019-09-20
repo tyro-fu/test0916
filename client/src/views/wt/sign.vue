@@ -1,6 +1,7 @@
 <template>
   <div>
    <LoginAndSign></LoginAndSign>
+  
     <div class="passportMain">
       <div class="section">
         <div class="sectionLeft">

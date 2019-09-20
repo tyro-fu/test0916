@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/wt/login.vue'
 import Sign from './views/wt/sign.vue'
+import Classify from './views/wt/classify.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +30,11 @@ export default new Router({
       path:'/sign',
       name:'sign',
       component: Sign
+    },
+    {
+      path:'/classify',
+      name:'classify',
+      component: Classify
     }
   ]
 })

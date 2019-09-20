@@ -14,12 +14,12 @@
 
     <!-- <Login></Login> -->
   <!-- <Sign></Sign> -->
-  
+  <classify></classify>
   </div>
 </template>
 
 <script>
-
+// import classify from './views/wt/classify'
 // import Login from './views/wt/login'
 // import Sign from './views/wt/sign'
 export default {
@@ -27,9 +27,10 @@ export default {
   components: {
     // Login,
   // Sign
+  // classify
   },
    created() {
-    this.$router.push("/login")
+    this.$router.push("/classify")
   }
 }
 </script>
