@@ -32,7 +32,7 @@ module.exports.registeUser = function (req, res) {
     let name = req.body.name;
     let password = req.body.password;
     let userService = new UserService()
-    userService.register(name, password, address, num, ob => {
+    userService.register(name, password, ob => {
         res.json(ob);
     })
 }

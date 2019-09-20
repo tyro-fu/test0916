@@ -1,5 +1,5 @@
 let SqlBase = require('./SqlBase');
-class StoreModel extends SqlBase {
+class OrderModel extends SqlBase {
     constructor() {
         super();
     }
@@ -19,4 +19,4 @@ class StoreModel extends SqlBase {
     }
 
 }
-module.exports=StoreModel;
+module.exports=OrderModel;
