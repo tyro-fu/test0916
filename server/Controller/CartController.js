@@ -3,10 +3,8 @@ let CartService=require('../Service/CartService');
 //添加到购物车
 module.exports.insert=function(req,res){
     let cartService=new CartService();
-    let proId=req.query.proId;
-    let userId=req.query.userId;
-    let count=req.query.count;
-    cartService.insert(proId,userId,count,data=>{
+    let {img,userId,count,name,price,kind,proId}=req.query
+    cartService.insert(img,userId,count,name,price,kind,proId,data=>{
         res.json(data)
     })
 }

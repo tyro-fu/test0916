@@ -8,7 +8,15 @@ class ProductService{
     //获取全部商品
     getProduct(type,call){
         this.productModel.selectByType(type,res=>{
-            call(res)
+            res.forEach((item,index)=>{
+                this.productDetailModel.selectById(item.pdid,ob=>{
+                    item.detail=ob
+                    if (index==res.length-1) {
+                        call(res)
+                    }
+                })
+            })
+           
         })
     }
     //通过id获取商品信息
@@ -18,11 +26,11 @@ class ProductService{
         })
     }
     //添加商品
-    insert(name,price,img,type,proCode,kind,prices, call){
+    insert(name,price,img,type,proCode,kind,prices, pdid,call){
       
         //商品不存在执行插入操作
-            this.productModel.insert(name, price,img,type,res=>{
-                this.productDetailModel.insert(proCode,kind,prices,res=>{
+            this.productModel.insert(name, img,price,type,pdid,res=>{
+                this.productDetailModel.insert(proCode,kind,prices,pdid,res=>{
                     let ob={}
                     ob.msg='添加商品成功';
                     ob.code=1;

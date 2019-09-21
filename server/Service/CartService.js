@@ -4,10 +4,10 @@ class CartService{
         this.cartModel=new CartModel()
     }
 
-    insert(proId,userId,count,call){
+    insert(img,userId,count,name,price,kind,proId,call){
         this.cartModel.selectBeforeInsert(proId,userId,res=>{
             if(res.length==0){
-                this.cartModel.insert(proId,userId,count,res=>{ 
+                this.cartModel.insert(img,userId,count,name,price,kind,proId,res=>{ 
                     this.cartModel.selectByUserId(userId,res=>{
                         call(res)
                     })
@@ -37,14 +37,14 @@ class CartService{
             })
         }
     }
-    selectBeforeInsert(userId,menuId,call){
-        this.cartModel.selectBeforeInsert(userId,menuId,res=>{
-            call(res)
-        })
-    }
+    // selectBeforeInsert(userId,menuId,call){
+    //     this.cartModel.selectBeforeInsert(userId,menuId,res=>{
+    //         call(res)
+    //     })
+    // }
     getCart(userId,call){
         this.cartModel.selectByUserId(userId,res=>{
-            call(res)
+          call(res)
         })
     }
     pay(cartList,call){
