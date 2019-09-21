@@ -1,11 +1,7 @@
 <template>
   <div>
-<<<<<<< HEAD
    <LoginAndSign></LoginAndSign>
   
-=======
-    <LoginAndSign></LoginAndSign>
->>>>>>> 2cc69c243bbca66556b7b33beb0cb7b62c2dba69
     <div class="passportMain">
       <div class="section">
         <div class="sectionLeft">

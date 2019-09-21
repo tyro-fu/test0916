@@ -16,7 +16,7 @@
           <div class="f1">|</div>
           <div>帮助中心</div>
           <div class="f1">|</div>
-          <div>我的购物车</div>
+          <div @click="toCart">我的购物车</div>
         </div>
       </div>
       <div class="logoBox">
@@ -38,6 +38,9 @@ export default {
     },
     toSign() {
       this.$router.push("/sign");
+    },
+    toCart() {
+      this.$router.push("/cart");
     }
 
   },

@@ -11,7 +11,7 @@ url是请求地址 参数格式就是需要发送到后端的参数的名字
 
 搜索商品接口(get):url--http://localhost:8888/source 参数格式--name(商品名)  返回相应搜索内容的商品信息
 
-商品详情接口(get):url--http://localhost:8888/getDetail 参数格式--id(商品id)  返回对应id的商品详情信息(数组,取下标0进行使用)
+//暂不使用 商品详情接口(get):url--http://localhost:8888/getDetail 参数格式--id(商品id)  返回对应id的商品详情信息(数组,取下标0进行使用)
 
 获取购物车数据接口(get):url--http://localhost:8888/getCart 参数格式--userId(用户id)  返回对应用户的购物车数据
 
