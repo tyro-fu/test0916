@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="header">
           <div class="top">
         <div class="topLeft">
           <div>您好，欢迎来到泸州老窖官方商城！</div>
@@ -107,7 +107,8 @@ export default {
      data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        input3:""
       };
     },
      methods: {
@@ -234,12 +235,15 @@ height: 60px;
     overflow:hidden;
 
 }
-.AllGoods >>> .AllGoodsBox  {
+.AllGoods > .AllGoodsBox  {
      width: 200px;
        height: 38px !important;
 }
 .change{
   cursor: pointer;
+}
+.header{
+  overflow: hidden;
 }
 /* .otherGoods{
       background-color: #d00a00;
