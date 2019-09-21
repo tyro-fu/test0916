@@ -50,7 +50,7 @@ app.get('/getDetail',ProductDetailController.getDetail)
 
 //引入购物车模块
 const CartController=require('./Controller/CartController')
-app.get('/addCart',CartController.insert)
+app.post('/addCart',CartController.insert)
 app.get('/getCart',CartController.getCart)
 app.get('/updateCart',CartController.updateCount)
 
