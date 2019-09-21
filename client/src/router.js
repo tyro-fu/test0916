@@ -7,6 +7,10 @@ import Page3 from "./components/page3.vue";
 import Page4 from "./components/page4.vue";
 import Page5 from "./components/page5.vue";
 import Middle from "./components/middle.vue";
+import Login from "./views/wt/login";
+import Sign from "./views/wt/sign";
+import Classify from "./views/wt/classify"
+// import { ElLoadingComponent } from 'element-ui/types/loading';
 
 Vue.use(Router)
 
@@ -24,6 +28,13 @@ export default new Router({
         { path: "/page4", component: Page4 },
         { path: "/page5", component: Page5 }
       ]
+    },
+    {
+      path:'/login',component:Login
+    },{
+      path:'/sign',component:Sign
+    },{
+      path:'/classify',component:Classify
     }
     
   ]
