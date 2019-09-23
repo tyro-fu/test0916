@@ -19,38 +19,46 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [{
-    path: "/",
-    component: Home,
-    children: [{
-      path: "/page1",
-      component: Page1
+      path: "/",
+      component: Home,
+      children: [{
+        path: "/page1",
+        component: Page1
+      }, {
+        path: "/page2",
+        component: Page2
+      }, {
+        path: "/page3",
+        component: Page3
+      }, {
+        path: "/page4",
+        component: Page4
+      }, {
+        path: "/page5",
+        component: Page5
+      }, {
+        path: "/",
+        component: Middle
+      }, {
+        path: "/middle",
+        component: Middle
+      }],
+    }
+
+    , {
+      path: "detail",
+      component: Detail
+    },
+    {
+      path: "cart",
+      component: Cart
+    },
+    {
+      path: "sign",
+      component: Sign
     }, {
-      path: "/page2",
-      component: Page2
-    }, {
-      path: "/page3",
-      component: Page3
-    }, {
-      path: "/page4",
-      component: Page4
-    }, {
-      path: "/page5",
-      component: Page5
-    }, {
-      path: "/middle",
-      component: Middle
-    }],
-  }, {
-    path: "detail",
-    component: Detail
-  }, {
-    path: "cart",
-    component: Cart
-  }, {
-    path: "sign",
-    component: Sign
-  }, {
-    path: "login",
-    component: Login
-  }]
+      path: "login",
+      component: Login
+    }
+  ]
 })

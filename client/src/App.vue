@@ -27,8 +27,8 @@ export default {
   components: {
   //   Login,
   // Sign
-  }, mounted() {
-    this.$router.push("/classify");
+  // }, mounted() {
+  //   this.$router.push("/classify");
   }
 }
 
