@@ -17,7 +17,8 @@
           </div>
           <div class="product-concerns">
             <div>
-              <el-row>
+
+           <el-row>
                 <el-col :span="4" class="center label">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</el-col>
                 <el-col :span="20" class="label red-color">￥{{oPro.prices[index]}}</el-col>
               </el-row>
