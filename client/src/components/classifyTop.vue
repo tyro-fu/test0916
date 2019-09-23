@@ -85,10 +85,10 @@
           <li class="AllGoods">
             <a href="#" target="_blank">全部商品分类</a>
           </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">首页</a>
+          <li class="otherGoods" v-for="(item,index) in type" :key="index">
+            <a href="#" target="_blank" @click="getPro(item)">{{item}}</a>
           </li>
-          <li class="otherGoods">
+          <!-- <li class="otherGoods">
             <a href="#" target="_blank">国窖1573</a>
           </li>
           <li class="otherGoods">
@@ -112,7 +112,7 @@
           </li>
           <li class="otherGoods">
             <a href="#" target="_blank">热销推荐</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -122,8 +122,7 @@
 export default {
   data() {
     return {
-      activeIndex: "1",
-      activeIndex2: "1"
+     type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
     };
   },
   methods: {
@@ -132,7 +131,14 @@ export default {
     },
     toSign() {
       this.$router.push("/sign");
-    }
+    },
+  created(type) {
+    net
+    .get("http://localhost:8888/getProduct",{ type: type })
+    .then(res =>{
+      console.log("66",res)
+    })
+  }
   }
 };
 </script>

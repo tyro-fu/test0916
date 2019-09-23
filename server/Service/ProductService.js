@@ -30,7 +30,7 @@ class ProductService{
     insert(name,price,img,type,proCode,kind,prices, call){
       
         //商品不存在执行插入操作
-            this.productModel.insert(name, price,img,type,res=>{
+            this.productModel.insert(name, img,price,type,res=>{
                 this.productDetailModel.insert(proCode,kind,prices,res=>{
                     let ob={}
                     ob.msg='添加商品成功';

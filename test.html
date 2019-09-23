@@ -43,7 +43,7 @@
 			let kind = document.querySelector('#kind').value
 			let prices = document.querySelector('#prices').value
 			let url='http://localhost:8888/insert';
-			console.log(111,url)
+			console.log(111,name,price,img,type,proCode,kind,prices)
 			$.get(url,
 			{name:name,price:price,img:img,type:type,proCode:proCode,kind:kind,prices:prices},
 			function(res){

@@ -62,10 +62,10 @@ export default {
     components: {
         LoginAndSign
     },
-  //    methods: {
-  //   ToLogin() {
-  //     this.$router.push("/login");
-  //   },
+     methods: {
+    ToLogin() {
+      this.$router.push("/login");
+    }},
   //   submitForm(formName){
   //     this.$refs[formName].validate(vaiid => {
         

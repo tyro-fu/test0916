@@ -18,16 +18,6 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-<<<<<<< HEAD
-      path:'/',
-      name:'cart',
-      component: Cart
-    },
-    {
-      path:'/sign',
-      name:'sign',
-      component: Sign
-=======
       path: "/", component: Home,
       children: [
         { path: "", component: Middle },
@@ -38,7 +28,6 @@ export default new Router({
         { path: "/page4", component: Page4 },
         { path: "/page5", component: Page5 }
       ]
-<<<<<<< HEAD
     },
     {
       path:'/login',component:Login
@@ -46,9 +35,6 @@ export default new Router({
       path:'/sign',component:Sign
     },{
       path:'/classify',component:Classify
-=======
->>>>>>> a2c37cb413d30bd6fe0366458f5cb3bbabbb2836
->>>>>>> 9c06e8d416d7d146ebc4a331347a60ad1cca7a80
     }
     
   ]
