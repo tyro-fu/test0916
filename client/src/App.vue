@@ -36,25 +36,10 @@ export default {
 </script>
 
 <style>
-html,body{
-  height: 100%;
-  width: 100%;
+body{
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-  text-decoration: none;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
-  width: 100%;
-  /* margin-top: 60px; */
-=======
->>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
+
 }
 
 </style>
