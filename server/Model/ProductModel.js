@@ -16,9 +16,13 @@ class ProductModel extends SqlBase {
         });
     }
  //添加商品
+<<<<<<< HEAD
  insert(name,price, img,type, call) {
+=======
+ insert(name, img,price,type,pdid, call) {
+>>>>>>> 62a561d73092bed7cc095d2eb4a4e62bd81a655f
     //1,编写sql语句
-    var sql = `INSERT INTO 916yaojiaoPro(name,img,price,type) VALUES('${name}','${img}','${price}','${type}')`;
+    var sql = `INSERT INTO 916yaojiaoPro(name,img,price,type,pdid) VALUES('${name}','${img}','${price}','${type}','${pdid}')`;
     //2,进行插入操作
     /**
      *query，mysql语句执行的方法

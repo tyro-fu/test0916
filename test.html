@@ -27,6 +27,7 @@
 		编码:<input type="text" name="proCode" id="proCode" value="" />
 		含量:<input type="text" name="kind" id="kind" value="" />
 		价格们:<input type="text" name="prices" id="prices" value="" />
+		外键:<input type="text" name="pdid" id="pdid" value="" />
 		<div class="btnBox">
 			<button type="button" class="btn">提交</button>
 		</div>
@@ -42,10 +43,14 @@
 			let proCode = document.querySelector('#proCode').value
 			let kind = document.querySelector('#kind').value
 			let prices = document.querySelector('#prices').value
+			let pdid = document.querySelector('#pdid').value
 			let url='http://localhost:8888/insert';
+<<<<<<< HEAD
 			console.log(111,name,price,img,type,proCode,kind,prices)
+=======
+>>>>>>> 62a561d73092bed7cc095d2eb4a4e62bd81a655f
 			$.get(url,
-			{name:name,price:price,img:img,type:type,proCode:proCode,kind:kind,prices:prices},
+			{name:name,price:price,img:img,type:type,proCode:proCode,kind:kind,prices:prices,pdid:pdid},
 			function(res){
 				console.log(res);
 			})

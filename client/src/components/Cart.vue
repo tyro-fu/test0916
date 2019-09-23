@@ -3,14 +3,15 @@
         <LoginAndSign></LoginAndSign>
         <div class="cart-title">
            <i class="el-icon-s-goods"></i> <span>购物车</span>
-           <div class='cart-box'>
+        </div>
+         <div class='cart-box'>
                <div class="cart-none" v-if="carts.length===0"> 
                    <i class="el-icon-s-goods"></i>
                    <p>您的购物车还没有商品,您可以去商城逛逛</p>
                </div>
-                <el-row>
+                <el-row  v-if="carts.length!==0">
   <el-col :span="6"><div class="col-title">商品</div></el-col>
-  <el-col :span="3"><div class="col-title">销售价</div></el-col>
+  <el-col :span="3"><div class="col-title">单价</div></el-col>
   <el-col :span="3"><div class="col-title">数量</div></el-col>
   <el-col :span="3"><div class="col-title">优惠</div></el-col>
   <el-col :span="3"><div class="col-title">积分</div></el-col>
@@ -23,29 +24,32 @@
                    <el-tag type="info" class="tag">净含量{{cart.kind}}</el-tag>
                    <div class="money">￥{{cart.price}}</div>
                    <div class="count">
-                   <div class="up">+</div>
+                   <div class="up" @click="up(index,cart.count)">+</div>
                    <div class="num">{{cart.count}}</div>
-                   <div class="up">-</div>
+                   <div class="up" @click="desc(index,cart.count)">-</div>
                    </div>
                    <div class="offer">￥0.00</div>
                    <div class="integ">-</div>
                    <div class="tp">￥{{cart.price*cart.count}}</div>
                    <div class="delete">删除</div>
                </div>
-               <div class="all">
+               <div class="all" v-if="carts.length!==0">
                    <span>优惠金额:￥0.00</span>
                    <span>商品总金额:￥{{allPrice}}.00</span>
                    </div>
            </div>
-        </div>
+        <Footer></Footer>
+        
     </div>
 </template>
 <script>
 import LoginAndSign from './loginandsign'
+import Footer from './footer'
 export default {
     name:"Cart",
     components: {
-        LoginAndSign
+        LoginAndSign,
+        Footer
     },
     data() {
         return {
@@ -62,9 +66,12 @@ export default {
         }
     },
     methods: {
-        handleChange(value) {
-        console.log(value);
-      }
+     up(index,count){
+         this.carts[index].count=count+1
+     },
+     desc(index,count){
+         this.carts[index].count=count-1
+     }
     },
     created() {
         
@@ -194,11 +201,13 @@ export default {
         .delete{
              margin-left: 80px;
             font-size: 14px;
+            cursor: pointer;
         
         }
     }
     .all{
-        height: 100px;
+        padding-top:10px; 
+        height: 70px;
         background-color: #fff;
         text-align: right;
         padding-right: 50px;

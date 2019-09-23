@@ -4,11 +4,8 @@
       <el-col :span="10">
         <div class="block">
           <el-carousel>
-            <el-carousel-item v-for="item in 4" :key="item">
-              <img
-                src="http://cdn.lzljmall.com/public/images/6c/cd/79/9240a756aff1b6e665ee353f2cc097df47c72556.jpg?1543895715#h"
-                alt
-              />
+            <el-carousel-item v-for="item in oPro.img" :key="item">
+              <img :src="item" alt class="imgs" />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -16,19 +13,19 @@
       <el-col :span="14">
         <div class="wrap-text">
           <div class="product-titles">
-            <h2>{{load?"":oPro.name}}</h2>
+            <h2>{{oPro.name}}</h2>
           </div>
           <div class="product-concerns">
             <div>
               <el-row>
                 <el-col :span="4" class="center label">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</el-col>
-                <el-col :span="20" class="label red-color">￥{{load?"":oPro.price[index]}}</el-col>
+                <el-col :span="20" class="label red-color">￥{{oPro.prices[index]}}</el-col>
               </el-row>
             </div>
             <div>
               <el-row>
                 <el-col :span="4" class="center label">商品货号:</el-col>
-                <el-col :span="20" class="label">{{load?"":oPro.kind[index]}}</el-col>
+                <el-col :span="20" class="label">{{oPro.kind[index]}}</el-col>
               </el-row>
             </div>
             <div>
@@ -52,7 +49,11 @@
               <el-row>
                 <el-col :span="4" class="center label">净含量：</el-col>
                 <el-col :span="20" class="label">
-                  <el-button v-hidden="load" v-for="(item,index) in item" :key="index"></el-button>
+                  <el-button
+                    v-for="(item,index) in oPro.kind"
+                    :key="index"
+                    @click="handleChange(index,item)"
+                  >{{item}}</el-button>
                 </el-col>
               </el-row>
             </div>
@@ -62,7 +63,7 @@
                 <el-col :span="20" class="label">
                   <el-input-number
                     v-model="num1"
-                    @change="handleChange"
+                    @change="handleChangeNum"
                     :min="1"
                     :max="10"
                     label="描述文字"
@@ -98,7 +99,7 @@
   </div>
 </template>
 <script>
-import net from "../utils/net";
+// import net from "../utils/net";
 export default {
   name: "detailBox",
   data() {
@@ -106,27 +107,53 @@ export default {
       num1: 0,
       oPro: this.$store.state.oPro,
       index: 0,
-      load: true
+      load: false,
+      oCar: {}
     };
   },
   methods: {
-    handleCar() {},
+    handleCar() {
+      this.$store.commit("setCart",this.oCar);
+      // this.$route.push("")
+    },
     handleBuy() {},
-    handleChange(e) {
-      window.console.log(e);
+    handleChangeNum(e) {
+      this.oCar.num = e;
+    },
+    handleChange(index, item) {
+      this.index = index;
+      this.oCar.kind = item;
+      this.oCar.proCode=this.oPro.proCode[index];
+      this.oCar.price=this.oPro.prices[index];
+      window.console.log(this.oCar)
     }
   },
-  createds() {
+  beforeMount() {
+    this.oPro = {
+      name: "泸州老窖 特曲酒纪念版 52度500ml 浓香型白酒高度 泸州老窖官方商城",
+      type: 4,
+      price: 478.0,
+      img:
+        "http://cdn.lzljmall.com/public/images/ea/f7/fc/7c090a6cb6373161782f4fce4e22a9e617136358.jpg?1467625690#h=http://cdn.lzljmall.com/public/images/33/0c/f6/4ad919e54fe2d1ffa9b9377256c7576fd733909a.jpg?1493688891#h",
+      detail: [
+        { proCode: "1313=123=1233", kind: "500=600=700", prices: "123=134=345" }
+      ]
+    };
+
     if (this.oPro != null) {
-      net
-        .get("http://localhost:8888/getDetail", { id: this.oPro.id })
-        .then(res => {
-          // let data=JSON.parse(res.data[0])
-          // this.oPro.proCode=data.proCode.split("=");
-          // this.oPro.kind=data.kind.split("=");
-          // this.oPro.price=data.price.split("=");
-          console.log("1",res);
-        });
+      this.oPro.img = this.oPro.img.split("=");
+      this.oPro.proCode = this.oPro.detail[0].proCode.split("=");
+      this.oPro.kind = this.oPro.detail[0].kind.split("=");
+      this.oPro.prices = this.oPro.detail[0].prices.split("=");
+
+      this.oCar.name = this.oPro.name;
+      this.oCar.type = this.oPro.type;
+      this.oCar.img = this.oPro.img[0];
+      this.oCar.priCode = this.oPro.proCode[0];
+      this.oCar.kind = this.oPro.kind[0];
+      this.oCar.price = this.oPro.prices[0];
+      this.load = true;
+      window.console.log(this.oPro);
     }
   }
 };
@@ -196,7 +223,7 @@ export default {
   color: #666;
   line-height: 26px !important;
   max-height: 52px;
-  overflow: hidden;
+  overflow: if;
 }
 .product-concerns {
   height: 217px;
@@ -222,6 +249,7 @@ export default {
   font-weight: normal;
   font-size: 14px;
   color: #666;
+  text-align: left;
 }
 .red-color {
   font-size: 24px;
@@ -235,5 +263,9 @@ export default {
   font-family: "Microsoft YaHei", Tahoma, Helvetica, Arial, STXihei, SimSun,
     sans-serif;
   color: #333;
+}
+.imgs {
+  width: 100%;
+  height: 100%;
 }
 </style>

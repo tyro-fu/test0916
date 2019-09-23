@@ -4,9 +4,9 @@ class ProductDetailModel extends SqlBase {
         super();
     }
  //添加商品
- insert(proCode,kind,prices, call) {
+ insert(proCode,kind,prices, pdid,call) {
     //1,编写sql语句
-    var sql = `INSERT INTO 916proDetail(proCode,kind,prices) VALUES('${proCode}','${kind}','${prices}')`;
+    var sql = `INSERT INTO 916proDetail(proCode,kind,prices,pdid) VALUES('${proCode}','${kind}','${prices}','${pdid}')`;
     //2,进行插入操作 
     /**
      *query，mysql语句执行的方法
@@ -24,9 +24,9 @@ class ProductDetailModel extends SqlBase {
 }
 
      //通过id查询商品
-    selectById(id,call){
+    selectById(pdid,call){
         //编写sql语句
-        let sql = `select * from 916proDetail where id ='${id}'`;
+        let sql = `select * from 916proDetail where pdid ='${pdid}'`;
         //查询数据
         this.connection.query(sql, function (err, result) {
             if (err) {

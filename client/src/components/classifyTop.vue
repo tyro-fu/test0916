@@ -1,10 +1,27 @@
 <template>
+<<<<<<< HEAD
+    <div class="header">
+          <div class="top">
+        <div class="topLeft">
+          <div>您好，欢迎来到泸州老窖官方商城！</div>
+          <div class="logintext">
+            <div @click="toLogin" class="change">登录</div>
+            <div class="f1">|</div>
+            <div @click="toSign" class="change">注册</div>
+          </div>
+        </div>
+        <div class="topright">
+          <div>我的订单</div>
+          <div class="f1">|</div>
+          <div>会员中心</div>
+=======
   <div>
     <div class="top">
       <div class="topLeft">
         <div>您好，欢迎来到泸州老窖官方商城！</div>
         <div class="logintext">
           <div @click="toLogin" class="change">登录</div>
+>>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
           <div class="f1">|</div>
           <div @click="toSign" class="change">注册</div>
         </div>
@@ -120,12 +137,23 @@
 </template>
 <script>
 export default {
+<<<<<<< HEAD
+     data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1',
+        input3:""
+      };
+    },
+     methods: {
+=======
   data() {
     return {
      type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
     };
   },
   methods: {
+>>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
     toLogin() {
       this.$router.push("/login");
     },
@@ -246,11 +274,17 @@ body {
       padding-left: 0;
     margin: 0 auto;
 }
+<<<<<<< HEAD
+.AllGoods > .AllGoodsBox  {
+     width: 200px;
+       height: 38px !important;
+=======
 .ul-demo > li {
   float: left;
   box-sizing: border-box;
   padding:0 20px;
   
+>>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
 }
 .AllGoods {
  
@@ -265,9 +299,17 @@ body {
 .AllGoods>a{
  color: #fff ;
 }
+<<<<<<< HEAD
+.header{
+  overflow: hidden;
+}
+/* .otherGoods{
+      background-color: #d00a00;
+=======
 /* .AllGoods >>> .AllGoodsBox {
   width: 200px;
   height: 38px !important;
+>>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
 } */
 .change {
   cursor: pointer;

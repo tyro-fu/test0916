@@ -1,14 +1,17 @@
 <template>
   <div class="detail-box">
-      <DetailBox></DetailBox>
+    <ClassifyTop></ClassifyTop>
+    <DetailBox></DetailBox>
   </div>
 </template>
 <script>
-import DetailBox from "../../components/DetailBox"
+import DetailBox from "../../components/DetailBox";
+import ClassifyTop from "../../components/classifyTop"
 export default {
   name: "detail",
   components: {
-      DetailBox
+    DetailBox,
+    ClassifyTop
   },
   data() {
     return {};
@@ -18,7 +21,9 @@ export default {
 <style scoped>
 .detail-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 </style>
