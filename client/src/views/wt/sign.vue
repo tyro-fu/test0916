@@ -1,20 +1,7 @@
 <template>
   <div>
-<<<<<<< HEAD
    <LoginAndSign></LoginAndSign>
   
-=======
-  
-   <LoginAndSign></LoginAndSign>
-
-   <!-- <div class="logoBox">
-        <div class="logo">
-          <img
-            src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
-          />
-        </div>
-      </div> -->
->>>>>>> bfb7b13632832d44527654a5d8dc4e3169cbbe30
     <div class="passportMain">
       <div class="section">
         <div class="sectionLeft">

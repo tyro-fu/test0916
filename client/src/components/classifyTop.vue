@@ -1,6 +1,5 @@
 <template>
-<<<<<<< HEAD
-    <div class="header">
+   <div> <div class="header">
           <div class="top">
         <div class="topLeft">
           <div>您好，欢迎来到泸州老窖官方商城！</div>
@@ -14,14 +13,6 @@
           <div>我的订单</div>
           <div class="f1">|</div>
           <div>会员中心</div>
-=======
-  <div>
-    <div class="top">
-      <div class="topLeft">
-        <div>您好，欢迎来到泸州老窖官方商城！</div>
-        <div class="logintext">
-          <div @click="toLogin" class="change">登录</div>
->>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
           <div class="f1">|</div>
           <div @click="toSign" class="change">注册</div>
         </div>
@@ -35,8 +26,7 @@
         <div class="f1">|</div>
         <div>我的购物车</div>
       </div>
-    </div>
-    <div class="logoBox">
+      <div class="logoBox">
       <div class="logo">
         <div class="logiImg">
           <img
@@ -64,41 +54,6 @@
     <div class="nav">
       <div class="navBar">
         <ul :default-active="activeIndex" class="ul-demo" mode="horizontal" @select="handleSelect">
-          <!-- <el-submenu index="2" class="AllGoods">
-   <template slot="title" class="AllGoodsBox" >全部商品分类</template>
-   <el-submenu index="2-1">
-      <template slot="title">国窖1573</template>
-      <li index="2-1-1">经典系列</li>
-      <li index="2-1-2">其他</li>
-  
-    </el-submenu>
-    <el-submenu index="2-2">
-      <template slot="title">窖龄</template>
-      <li index="2-2-1">窖龄30</li>
-      <li index="2-2-2">窖龄60</li>
-      <li index="2-2-3">窖龄90</li>
-    </el-submenu>
-    <el-submenu index="2-3">
-      <template slot="title">特曲</template>
-      <li index="2-3-1">经典系列</li>
-      <li index="2-3-2">其他</li>
-
-    </el-submenu>
-    <el-submenu index="2-4">
-      <template slot="title">头曲</template>
-      <li index="2-4-1">畅想中国60年</li>
-      <li index="2-4-2">其他</li>
- 
-    </el-submenu>
-     <el-submenu index="2-5">
-      <template slot="title">高端定制</template>
-      <li index="2-5-1">高端定制</li>
-      <li index="2-5-2">常规定制</li>
-
-    </el-submenu>
-    
-          </el-submenu>-->
-
           <li class="AllGoods">
             <a href="#" target="_blank">全部商品分类</a>
           </li>
@@ -133,11 +88,12 @@
         </ul>
       </div>
     </div>
-  </div>
+ </div></div>
+    
 </template>
 <script>
 export default {
-<<<<<<< HEAD
+  name:"classifyTop",
      data() {
       return {
         activeIndex: '1',
@@ -146,6 +102,7 @@ export default {
       };
     },
      methods: {
+<<<<<<< HEAD
 =======
   data() {
     return {
@@ -154,6 +111,8 @@ export default {
   },
   methods: {
 >>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
+=======
+>>>>>>> 4d8532a69269be4513818a3a985015e99197a826
     toLogin() {
       this.$router.push("/login");
     },
@@ -247,12 +206,12 @@ body {
   font-size: 12px;
   color: #666;
 }
-/* .input-with-select{
+ .input-with-select{
         border: 2px solid #d00a00;
-} */
-/* .inpBut{
+} 
+ .inpBut{
         background-color: #d00a00;
-} */
+} 
 .nav {
   width: 100%;
   line-height: 38px;
@@ -274,17 +233,9 @@ body {
       padding-left: 0;
     margin: 0 auto;
 }
-<<<<<<< HEAD
 .AllGoods > .AllGoodsBox  {
      width: 200px;
        height: 38px !important;
-=======
-.ul-demo > li {
-  float: left;
-  box-sizing: border-box;
-  padding:0 20px;
-  
->>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
 }
 .AllGoods {
  
@@ -299,17 +250,11 @@ body {
 .AllGoods>a{
  color: #fff ;
 }
-<<<<<<< HEAD
 .header{
   overflow: hidden;
 }
 /* .otherGoods{
       background-color: #d00a00;
-=======
-/* .AllGoods >>> .AllGoodsBox {
-  width: 200px;
-  height: 38px !important;
->>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
 } */
 .change {
   cursor: pointer;
