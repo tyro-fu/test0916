@@ -10,7 +10,18 @@
         </div>
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
+          <router-link to='Cart' class="text">购物车</router-link>
           <router-link to='/cart' class="text">购物车</router-link>
+<<<<<<< HEAD
+=======
+          <router-link to="/login" class="text">登录</router-link>
+          <div>|</div>
+          <router-link to="/sign" class="text">注册</router-link>
+        </div>
+        <div class="cart">
+          <i class="icon iconfont icon-gouwuche"></i>
+          <router-link to="/cart" class="text">购物车</router-link>
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
         </div>
       </div>
     </div>
@@ -32,6 +43,7 @@
               <router-link to='/middle' class="title_t">首页</router-link>
             </li>
             <li v-for="(item,index) in title" :key="index">
+<<<<<<< HEAD
               <router-link :to='{path:"/classify",query:{type:item}}' class="title_t">{{item}}</router-link>
             </li>
             <!-- <li>
@@ -52,6 +64,10 @@
             <li>
               <router-link to class="title_t">所有商品</router-link>
             </li> -->
+=======
+              <router-link :to="'/classify/'+item" class="title_t">{{item}}</router-link>
+            </li>
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
           </ul>
         </div>
       </div>

@@ -54,11 +54,7 @@
       </div>
       <div class="nav">
         <div class="navBar">
-          <ul
-            :default-active="activeIndex"
-            class="ul-demo"
-            mode="horizontal"
-          >
+          <ul :default-active="activeIndex" class="ul-demo" mode="horizontal">
             <li class="AllGoods">
               <a href="#" target="_blank">全部商品分类</a>
             </li>
@@ -99,6 +95,7 @@
 <script>
 import net from "../utils/net";
 export default {
+<<<<<<< HEAD
   name:"classifyTop",
      data() {
       return {
@@ -107,6 +104,27 @@ export default {
         input3:"",
      type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
     }},
+=======
+  name: "classifyTop",
+  data() {
+    return {
+      activeIndex: "1",
+      activeIndex2: "1",
+      input3: "",
+      type: [
+        "首页",
+        "国窖1573",
+        "窖龄酒",
+        "特曲",
+        "头窖藏瓶",
+        "桃花醉",
+        "所有商品",
+        "百调",
+        "热销推荐"
+      ]
+    };
+  },
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
   methods: {
     toLogin() {
       this.$router.push("/login");
@@ -114,14 +132,22 @@ export default {
     toSign() {
       this.$router.push("/sign");
     },
+<<<<<<< HEAD
   created(type) {
     net
     .get("http://localhost:8888/getProduct",{ type: type })
     .then(res =>{
       window.console.log("1",res)
     })
+=======
+    created(type) {
+      net.get("http://localhost:8888/getProduct", { type: type }).then(res => {
+        window.console.log("1", res);
+      });
+    }
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
   }
-}}
+};
 </script>
 <style scoped>
 a {

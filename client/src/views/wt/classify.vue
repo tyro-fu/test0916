@@ -20,97 +20,6 @@
                   <span @click="getPro(item)">{{item}}</span>
                 </template>
               </el-submenu>
-              <!-- <el-submenu index="2">
-                <template slot="title">
-                  <span>特曲</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="3">
-                <template slot="title">
-                  <span>窖龄</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="4">
-                <template slot="title">
-                  <span>头曲</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="5">
-                <template slot="title">
-                  <span>二曲</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="5">
-                <template slot="title">
-                  <span>泸小二</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="6">
-                <template slot="title">
-                  <span>高端定制</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="7">
-                <template slot="title">
-                  <span>养生酒</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>其他</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>配方</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>官方留藏</span>
-                </template>
-              </el-submenu>
-
-              <el-submenu>
-                <template slot="title">
-                  <span>红酒</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>啤酒</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>大区</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>玛格丽特葡萄汁</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>百调</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>桃花醉</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>百调512活动</span>
-                </template>
-              </el-submenu>
-              <el-submenu>
-                <template slot="title">
-                  <span>热销推荐</span>
-                </template>
-              </el-submenu> -->
             </el-menu>
           </el-col>
         </el-row>
@@ -134,16 +43,12 @@
               <div class="collect"><a href="#">收藏</a></div>
           </div>
         </div>
-        <div class="Goods"></div>
-        <div class="Goods"></div>
-        <div class="Goods"></div>
-        <div class="Goods"></div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import net from "../../utils/net"
+// import net from "../../utils/net"
 import classifyTop from "../../components/classifyTop";
 export default {
   data() {
@@ -165,13 +70,14 @@ export default {
     
   },
   created() {
-    window.console.log("1223",this.$route.params)
     let type=this.$route.params.type;
-    net
-    .get("http://localhost:8888/getProduct",{ type: type })
-    .then(res =>{
-      window.console.log("66",res)
-    })
+    window.console.log("1223",this.$route.params,type)
+
+    // net
+    // .get("http://localhost:8888/getProduct",{ type: type })
+    // .then(res =>{
+    //   window.console.log("66",res)
+    // })
   },
 };
 </script>

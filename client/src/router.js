@@ -20,6 +20,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+<<<<<<< HEAD
   routes: [{
       path: "/",
       component: Home,
@@ -39,6 +40,13 @@ export default new Router({
           component: Middle
         },{
 
+=======
+  routes: [
+    {
+      path: "/",
+      component: Home,
+      children: [{
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
         path: "/page1",
         component: Page1
       }, {
@@ -64,7 +72,6 @@ export default new Router({
         component: Middle
       }],
     }
-
     , {
       path: "/detail",
       component: Detail
@@ -80,9 +87,16 @@ export default new Router({
       path: "/login",
       component: Login
     }, {
+<<<<<<< HEAD
       path: "/calssify",
+=======
+      path: "/classify/:type",
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
       component: Classify
     }
   ]
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
