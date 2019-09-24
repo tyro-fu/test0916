@@ -11,15 +11,8 @@
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
           <router-link to="Cart" class="text">购物车</router-link>
-          <router-link to="/cart" class="text">购物车</router-link>
-          <router-link to="/login" class="text">登录</router-link>
-          <div>|</div>
-          <router-link to="/sign" class="text">注册</router-link>
         </div>
-        <div class="cart">
-          <i class="icon iconfont icon-gouwuche"></i>
-          <router-link to="/cart" class="text">购物车</router-link>
-        </div>
+       
       </div>
     </div>
     <div class="headerBox">

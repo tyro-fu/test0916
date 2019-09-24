@@ -9,13 +9,11 @@
             <el-menu
               default-active="2"
               class="el-menu-vertical-demo"
-              @open="handleOpen"
-              @close="handleClose"
               background-color="white"
               text-color="#666"
               active-text-color="#d00a00"
             >
-              <el-submenu v-for="(item,inDex) in type" :key="inDex" index>
+              <el-submenu v-for="(item,index1) in type" :key="index1" index>
                 <template slot="title">
                   <span @click="getPro(item)">{{item}}</span>
                 </template>
@@ -25,21 +23,21 @@
         </el-row>
       </div>
       <div class="RightGoods">
-        <div class="Goods">
+        <div class="Goods" v-for="(pro,index) in proData" :key="index">
          <div> 
              <img
             class="action-goods-img"
            
             style="max-width:210px;max-height:210px;margin: 0 auto;   margin-left: 10px;"
-            src="http://cdn.lzljmall.com/public/images/b6/42/1e/886e43dc5457a1dd67aa9a1a258f1f6351e8acd2.jpg?1493347743#h"
+            :src=pro.newImg
           />
           </div>
           <div class="GoodsText">
-              52度   国窖1573    500ml  泸州老窖官方商城
+              {{pro.name}}
           </div>
-          <div class="money">￥969.00</div>
+          <div class="money">￥{{pro.price}}</div>
           <div class="GoodsBtns">
-              <div class="toPay"><a href="#">加入购物车</a></div>
+              <div class="toPay" @click="addCart(pro,count=0)"><a href="#">加入购物车</a></div>
               <div class="collect"><a href="#">收藏</a></div>
           </div>
         </div>
@@ -48,37 +46,68 @@
   </div>
 </template>
 <script>
-// import net from "../../utils/net"
+import net from "../../utils/net"
 import classifyTop from "../../components/classifyTop";
 export default {
   data() {
     return {
-      type:['国窖1573','特曲',' 窖龄','头曲','二曲','泸小二','高端定制','养生酒','其他','配方','官方留藏','红酒','啤酒','大区','玛格丽特葡萄汁','百调','桃花醉','百调512活动','热销推荐']
-
+      type:['国窖1573','特曲',' 窖龄','头曲','二曲','泸小二','高端定制','养生酒','其他','配方','官方留藏','红酒','啤酒','大区','玛格丽特葡萄汁','百调','桃花醉','百调512活动','热销推荐'],
+      proData:this.$store.state.products,
+      userId:this.$store.state.user.id
     }
   },
   components: {
     classifyTop
   },
   methods: {
-    handleOpen(key, keyPath) {
-      window.console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      window.console.log(key, keyPath);
+    addCart(pro){
+      var count=0;
+        net.get(`/selectBf`,{
+            userId:this.userId,
+            proId:pro.id
+        }).then(res=>{
+           window.console.log(pro)
+          if (res.data.length!=0) {
+            count=res.data[0].count;  
+          }
+          count++;
+           net.post(`/addCart`, {
+          img:pro.newImg,
+          userId:this.userId,
+          count:count,
+          name:pro.name,
+          price:pro.price,
+          kind:pro.detail[0].kind.split('==')[0],
+          proId:pro.id
+         }).then(res=>{
+           this.$store.commit('setCart',res.data);
+         }).catch(error=>{
+           window.console.log(error)
+         })
+         
+        }).catch(error=>{
+          window.console.log(error)
+          
+        })
+
     }
     
   },
-  created() {
+  beforeMount() {
     let type=this.$route.params.type;
-    window.console.log("1223",this.$route.params,type)
-
-    // net
-    // .get("http://localhost:8888/getProduct",{ type: type })
-    // .then(res =>{
-    //   window.console.log("66",res)
-    // })
+    net
+    .get("/getProduct",{ type: type })
+    .then(res =>{
+      let proList=[]
+      res.data.forEach(item=>{
+        item.newImg=item.img.split('==')[0]
+        proList.push(item)
+      })
+     this.$store.commit('setPro',proList)
+     this.proData=this.$store.state.products
+    })
   },
+ 
 };
 </script>
 <style >
@@ -142,6 +171,10 @@ a{
     width: 208px;
     height: 34px;
     margin: 5px auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    overflow: hidden;
 }
 .money{
     height: 23px;
