@@ -143,7 +143,7 @@
   </div>
 </template>
 <script>
-import net from "../../utils/net"
+// import net from "../../utils/net"
 import classifyTop from "../../components/classifyTop";
 export default {
   data() {
@@ -165,13 +165,14 @@ export default {
     
   },
   created() {
-    window.console.log("1223",this.$route.params)
     let type=this.$route.params.type;
-    net
-    .get("http://localhost:8888/getProduct",{ type: type })
-    .then(res =>{
-      window.console.log("66",res)
-    })
+    window.console.log("1223",this.$route.params,type)
+
+    // net
+    // .get("http://localhost:8888/getProduct",{ type: type })
+    // .then(res =>{
+    //   window.console.log("66",res)
+    // })
   },
 };
 </script>

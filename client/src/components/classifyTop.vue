@@ -1,6 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
     <div class="header">
       <div class="top">
         <div class="topLeft">
@@ -15,13 +14,6 @@
           <div>我的订单</div>
           <div class="f1">|</div>
           <div>会员中心</div>
-=======
-    <div class="top">
-      <div class="topLeft">
-        <div>您好，欢迎来到泸州老窖官方商城！</div>
-        <div class="logintext">
-          <div @click="toLogin" class="change">登录</div>
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
           <div class="f1">|</div>
           <div @click="toSign" class="change">注册</div>
         </div>
@@ -35,28 +27,12 @@
         <div class="f1">|</div>
         <div>我的购物车</div>
       </div>
-<<<<<<< HEAD
       <div class="logoBox">
         <div class="logo">
           <div class="logiImg">
             <img
               src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
             />
-=======
-    </div>
-    <div class="logoBox">
-      <div class="logo">
-        <div class="logiImg">
-          <img
-            src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
-          />
-        </div>
-        <div class="iput">
-          <div>
-            <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-              <el-button slot="append" icon="el-icon-search">搜索</el-button>
-            </el-input>
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
           </div>
           <div class="iput">
             <div>
@@ -76,14 +52,9 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <div class="nav">
         <div class="navBar">
-          <ul
-            :default-active="activeIndex"
-            class="ul-demo"
-            mode="horizontal"
-          >
+          <ul :default-active="activeIndex" class="ul-demo" mode="horizontal">
             <li class="AllGoods">
               <a href="#" target="_blank">全部商品分类</a>
             </li>
@@ -117,19 +88,6 @@
             </li>-->
           </ul>
         </div>
-=======
-    </div>
-    <div class="nav">
-      <div class="navBar">
-        <ul :default-active="activeIndex" class="ul-demo" mode="horizontal" @select="handleSelect">
- <li class="AllGoods">
-            <a href="#" target="_blank">全部商品分类</a>
-          </li>
-          <li class="otherGoods" v-for="(item,index) in type" :key="index">
-            <a href="#" target="_blank" @click="getPro(item)">{{item}}</a>
-          </li>
-        </ul>
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
       </div>
     </div>
   </div>
@@ -137,19 +95,25 @@
 <script>
 import net from "../utils/net";
 export default {
-<<<<<<< HEAD
-  name:"classifyTop",
-     data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1',
-        input3:"",
-=======
+  name: "classifyTop",
   data() {
     return {
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
-     type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
-    }},
+      activeIndex: "1",
+      activeIndex2: "1",
+      input3: "",
+      type: [
+        "首页",
+        "国窖1573",
+        "窖龄酒",
+        "特曲",
+        "头窖藏瓶",
+        "桃花醉",
+        "所有商品",
+        "百调",
+        "热销推荐"
+      ]
+    };
+  },
   methods: {
     toLogin() {
       this.$router.push("/login");
@@ -157,18 +121,13 @@ export default {
     toSign() {
       this.$router.push("/sign");
     },
-  created(type) {
-    net
-    .get("http://localhost:8888/getProduct",{ type: type })
-    .then(res =>{
-<<<<<<< HEAD
-      window.console.log("1",res)
-=======
-      window.console.log("66",res)
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
-    })
+    created(type) {
+      net.get("http://localhost:8888/getProduct", { type: type }).then(res => {
+        window.console.log("1", res);
+      });
+    }
   }
-}}
+};
 </script>
 <style scoped>
 a {
@@ -247,21 +206,12 @@ body {
   font-size: 12px;
   color: #666;
 }
-<<<<<<< HEAD
 .input-with-select {
   border: 2px solid #d00a00;
 }
 .inpBut {
   background-color: #d00a00;
 }
-=======
-/* .input-with-select{
-        border: 2px solid #d00a00;
-} */
-/* .inpBut{
-        background-color: #d00a00;
-} */
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
 .nav {
   width: 100%;
   line-height: 38px;
@@ -283,17 +233,9 @@ body {
   padding-left: 0;
   margin: 0 auto;
 }
-<<<<<<< HEAD
 .AllGoods > .AllGoodsBox {
   width: 200px;
   height: 38px !important;
-=======
-.ul-demo > li {
-  float: left;
-  box-sizing: border-box;
-  padding:0 20px;
-  
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
 }
 .AllGoods {
   font-size: 14px;
@@ -307,17 +249,11 @@ body {
 .AllGoods > a {
   color: #fff;
 }
-<<<<<<< HEAD
 .header {
   overflow: hidden;
 }
 /* .otherGoods{
       background-color: #d00a00;
-=======
-/* .AllGoods >>> .AllGoodsBox {
-  width: 200px;
-  height: 38px !important;
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
 } */
 .change {
   cursor: pointer;
