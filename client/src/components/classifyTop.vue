@@ -1,18 +1,10 @@
 <template>
-   <div> <div class="header">
-          <div class="top">
-        <div class="topLeft">
-          <div>您好，欢迎来到泸州老窖官方商城！</div>
-          <div class="logintext">
-            <div @click="toLogin" class="change">登录</div>
-            <div class="f1">|</div>
-            <div @click="toSign" class="change">注册</div>
-          </div>
-        </div>
-        <div class="topright">
-          <div>我的订单</div>
-          <div class="f1">|</div>
-          <div>会员中心</div>
+  <div>
+    <div class="top">
+      <div class="topLeft">
+        <div>您好，欢迎来到泸州老窖官方商城！</div>
+        <div class="logintext">
+          <div @click="toLogin" class="change">登录</div>
           <div class="f1">|</div>
           <div @click="toSign" class="change">注册</div>
         </div>
@@ -26,7 +18,8 @@
         <div class="f1">|</div>
         <div>我的购物车</div>
       </div>
-      <div class="logoBox">
+    </div>
+    <div class="logoBox">
       <div class="logo">
         <div class="logiImg">
           <img
@@ -54,65 +47,26 @@
     <div class="nav">
       <div class="navBar">
         <ul :default-active="activeIndex" class="ul-demo" mode="horizontal" @select="handleSelect">
-          <li class="AllGoods">
+ <li class="AllGoods">
             <a href="#" target="_blank">全部商品分类</a>
           </li>
           <li class="otherGoods" v-for="(item,index) in type" :key="index">
             <a href="#" target="_blank" @click="getPro(item)">{{item}}</a>
           </li>
-          <!-- <li class="otherGoods">
-            <a href="#" target="_blank">国窖1573</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">窖龄酒</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">特曲</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">头窖藏瓶</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">桃花醉</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">所有商品</a>
-          </li>
-
-          <li class="otherGoods">
-            <a href="#" target="_blank">百调</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">热销推荐</a>
-          </li> -->
         </ul>
       </div>
     </div>
- </div></div>
-    
+  </div>
 </template>
 <script>
+import net from "../utils/net";
 export default {
-  name:"classifyTop",
-     data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1',
-        input3:""
-      };
-    },
-     methods: {
-<<<<<<< HEAD
-=======
   data() {
     return {
      type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
     };
   },
   methods: {
->>>>>>> ca8686ce0b51b3f040844f8ff111fbc078b3c80c
-=======
->>>>>>> 4d8532a69269be4513818a3a985015e99197a826
     toLogin() {
       this.$router.push("/login");
     },
@@ -123,7 +77,7 @@ export default {
     net
     .get("http://localhost:8888/getProduct",{ type: type })
     .then(res =>{
-      console.log("66",res)
+      window.console.log("66",res)
     })
   }
   }
@@ -206,12 +160,12 @@ body {
   font-size: 12px;
   color: #666;
 }
- .input-with-select{
+/* .input-with-select{
         border: 2px solid #d00a00;
-} 
- .inpBut{
+} */
+/* .inpBut{
         background-color: #d00a00;
-} 
+} */
 .nav {
   width: 100%;
   line-height: 38px;
@@ -233,9 +187,11 @@ body {
       padding-left: 0;
     margin: 0 auto;
 }
-.AllGoods > .AllGoodsBox  {
-     width: 200px;
-       height: 38px !important;
+.ul-demo > li {
+  float: left;
+  box-sizing: border-box;
+  padding:0 20px;
+  
 }
 .AllGoods {
  
@@ -250,11 +206,9 @@ body {
 .AllGoods>a{
  color: #fff ;
 }
-.header{
-  overflow: hidden;
-}
-/* .otherGoods{
-      background-color: #d00a00;
+/* .AllGoods >>> .AllGoodsBox {
+  width: 200px;
+  height: 38px !important;
 } */
 .change {
   cursor: pointer;
