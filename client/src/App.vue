@@ -27,9 +27,10 @@ export default {
   components: {
   //   Login,
   // Sign
-  }, mounted() {
-    this.$router.push("/home");
   }
+  // mounted() {
+  //   this.$router.push("/home");
+  // }
 }
 
 
@@ -39,21 +40,6 @@ export default {
 body{
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-  text-decoration: none;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
-  width: 100%;
-  /* margin-top: 60px; */
-=======
-
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
 }
 
 </style>

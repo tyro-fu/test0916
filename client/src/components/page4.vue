@@ -20,8 +20,8 @@
     </div>
     <div class="third_pic"></div>
     <div class="fourth_pic"></div>
-    <div class="fifth_pic"></div>
-    <div class="sixth_pic"></div>
+    <!-- <div class="fifth_pic"></div>
+    <div class="sixth_pic"></div> -->
   </div>
 </template>
 <script>
@@ -57,7 +57,7 @@ export default {
   line-height: 90px;
 }
 .br_pic {
-  width: 1365px;
+  width: 100%;
   height: 326px;
   display: flex;
   justify-content: space-around;
@@ -68,24 +68,16 @@ export default {
   width: 326px;
   height: 326px;
 }
+.br_pic img:hover {
+  opacity: 0.9;
+}
 .third_pic{
     background: url(http://cdn.lzljmall.com/public/images/ad/95/92/d1cdc4d9f7527abdbc06be1e6b29ce19d30cfb97.jpg?1466498138#h) center center no-repeat;
     height: 850px;
     text-align: center;
 }
 .fourth_pic{
-    background: url(http://cdn.lzljmall.com/public/images/26/f5/a5/4300f67c38e8580fa8dd5b5140adc4b84e9c8c5e.jpg?1472395788#w) center center no-repeat;
-    width: 1545px;
-    height: 1264px;
-}
-.fifth_pic{
-    background: url(http://cdn.lzljmall.com/public/images/c9/16/cd/374cc28685fb4f426e7a3259c052a0bfd84a0f50.jpg?1466498199#w) center center no-repeat;
-    width: 1545px;
-    height: 1276px;
-}
-.sixth_pic{
-    background: url(http://cdn.lzljmall.com/public/images/93/8f/62/3e7f8cd605d08ca3318e971adcfcb76b7adf75f2.jpg?1472454567#w) center center no-repeat;
-    width: 1545px;
-    height: 636px;
+    background: url(http://cdn.lzljmall.com/public/images/58/08/8d/86fcb6e914d395e707e964efa2746102ae3fcb2e.jpg?1466497272#h) center center no-repeat;
+    height: 3176px;
 }
 </style>

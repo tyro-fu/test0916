@@ -42,12 +42,12 @@ export default {
 <style scoped>
 .first_pic {
   width: 100%;
-  height: 427px;
+  height: 570px;
   overflow: hidden;
 }
 .first_pic img {
-  width: 1440px;
-  height: 427px;
+  width: 100%;
+  height: 570px;
 }
 .second_pic {
   width: 100%;
@@ -65,7 +65,7 @@ export default {
   line-height: 90px;
 }
 .br_pic {
-  width: 1365px;
+  width: 100%;
   height: 326px;
   display: flex;
   justify-content: space-around;
@@ -76,6 +76,9 @@ export default {
   width: 326px;
   height: 326px;
 }
+.br_pic img:hover{
+opacity: 0.9;
+}
 .third_pic {
   background: url(http://cdn.lzljmall.com/public/images/16/8c/99/968e6fcb85817488f964a6a3666a0ad824a30564.jpg?1472395257#h)
     center center no-repeat;
@@ -84,11 +87,12 @@ export default {
   height: 624px;
 }
 .fourth_pic {
-  background: url(http://cdn.lzljmall.com/public/images/44/aa/31/e89015a90723e3e1a8e8bdf2c87dc397f07a0962.jpg?1510818270#h)
+  background: url(http://cdn.lzljmall.com/public/images/3b/58/47/0b3e1bd09f2afc421ba9f8f949119aebab0a758e.jpg?1510818110#h)
     center top no-repeat;
   text-align: center;
   width: 100%;
   height: 6292px;
+  background-color: rgb(239, 239, 239)
 }
 .fifth_pic {
   width: 100%;

@@ -110,24 +110,22 @@ export default {
   overflow: hidden;
 }
 .first_pic img {
-  width: 1440px;
+  width: 100%;
   height: 427px;
 }
 .second_pic {
-  width: 100%;
-  height: 235px;
   /* background: lightsalmon; */
   display: flex;
   position: relative;
   overflow: hidden;
 }
 .second_pic img {
-  width: 356px;
-  height: 235px;
+  width: 100%;
+  height: 100%;
 }
 .appear {
-  width: 356px;
-  height: 235px;
+  width: 25%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.3);
   display: none;
   position: absolute;
@@ -137,12 +135,13 @@ export default {
   display: block;
 }
 .info {
-  width: 356px;
-  height: 235px;
+  width: 100%;
+  height: 100%;
   color: #fff;
   display: none;
   position: absolute;
   top: 0;
+  text-align: center;
 }
 .info:hover h4 {
   margin: 0 auto;
@@ -172,49 +171,41 @@ export default {
 .third_pic {
   width: 100%;
   height: 1143px;
-  position: relative;
   overflow: hidden;
 }
 .third_pic img {
   width: 1920px;
   height: 1143px;
-  position: absolute;
-  right: -19%;
 }
 .fourth_pic {
   width: 100%;
   height: 918px;
-  position: relative;
   overflow: hidden;
 }
 .fourth_pic img {
   width: 1920px;
   height: 918px;
-  position: absolute;
-  right: -19%;
 }
 .fifth_pic {
   width: 100%;
   height: 1121px;
-  position: relative;
   overflow: hidden;
 }
 .fifth_pic img {
   width: 1920px;
   height: 1121px;
-  position: absolute;
-  right: -19%;
 }
 .sixth_pic {
   width: 100%;
   height: 1210px;
-  position: relative;
   overflow: hidden;
 }
 .sixth_pic img {
   width: 1920px;
   height: 1210px;
-  position: absolute;
-  right: -19%;
+}
+.num{
+  width: 25%;
+  height: 100%;
 }
 </style>

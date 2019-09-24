@@ -16,16 +16,10 @@ class ProductModel extends SqlBase {
         });
     }
  //添加商品
-<<<<<<< HEAD
-
-
- insert(name, img,price,type,pdid, call) {
-
-=======
- insert(name, img,price,type,pdid, call) {
->>>>>>> 564568c427d33a8d7709c5961297da577c882a33
+ insert(name, img,price,type1,pdid, call) {
     //1,编写sql语句
-    var sql = `INSERT INTO 916yaojiaoPro(name,img,price,type,pdid) VALUES('${name}','${img}','${price}','${type}','${pdid}')`;
+    var sql = `INSERT INTO 916yaojiaoPro(name,img,price,type1,pdid) VALUES('${name}','${img}','${price}','${type1}','${pdid}')`;
+    console.log(sql)
     //2,进行插入操作
     /**
      *query，mysql语句执行的方法
@@ -82,9 +76,9 @@ class ProductModel extends SqlBase {
     //      });
     // }
     //通过名字查询商品
-    selectByType(type,call){
+    selectByType(type1,call){
           //编写sql语句
-          let sql = `select * from 916yaojiaoPro where type ='${type}'`;
+          let sql = `select * from 916yaojiaoPro where type1 ='${type1}'`;
           //查询数据
           this.connection.query(sql, function (err, result) {
               if (err) {

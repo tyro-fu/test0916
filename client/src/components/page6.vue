@@ -1,42 +1,48 @@
 <template>
   <div>
     <div class="first_pic">
-      <img @error="zhan"
-        src="http://cdn.lzljmall.com/public/images/99/ef/c9/f66e7be7d4807f93a45fefefeb1ab460f548361a.jpg?1496304147#w"
+      <img
+        src="http://cdn.lzljmall.com/public/images/99/0c/27/1e93846bd08563074f4ac7c81b891199ce90d0e4.jpg?1554349933#w"
       />
     </div>
-    <div class="br_title">HOT BRAND / 品牌推荐</div>
     <div class="second_pic">
-      <img @error="zhan"
-        src="http://cdn.lzljmall.com/public/images/06/3a/1c/6a3c0bb671a667f4dbb10fd62ac8e511e9cfe13a.jpg?1525420281#w"
-      />
+      <div class="br_title">HOT BRAND / 品牌推荐</div>
+      <div class="br_pic">
+        <img
+          @error="zhan"
+          src="http://cdn.lzljmall.com/public/images/52/57/c9/a3bcbfebe152494fb8ef476cc1f94615b283fa6a.jpg?1554349972#w"
+        />
+        <img
+          @error="zhan"
+          src="http://cdn.lzljmall.com/public/images/e8/b7/98/3fde6feaedfc986bd4e4930347f94b657bd7bbf2.jpg?1554349979#w"
+        />
+        <img
+          @error="zhan"
+          src="http://cdn.lzljmall.com/public/images/16/01/9f/f37e01cc844c49f84f0b82c5a35636683c7bbefb.jpg?1554350052#w"
+        />
+        <img
+          @error="zhan"
+          src="http://cdn.lzljmall.com/public/images/5b/4f/02/c5b8f743fc0cc0297e783307ddd423393c1f2185.jpg?1554350092#w"
+        />
+      </div>
     </div>
-    <div class="fourth_pic">
-      <img @error="zhan"
-        src="http://cdn.lzljmall.com/public/images/6e/61/c1/035a4d8de82de31a03624c7f982a9c4c11a2c31d.jpg?1525420305#w"
-      />
-    </div>
-    <div class="fifth_pic">
-      <img @error="zhan"
-        src="http://cdn.lzljmall.com/public/images/39/38/c9/e55d05d3f4b86d0939c7ce57f2df28b9b455da74.jpg?1464056826#w"
-      />
-    </div>
-    <div class="sixth_pic">
-      <img @error="zhan"
-        src="http://cdn.lzljmall.com/public/images/f3/46/59/7e25e32d4e203986a6d290455b9091dd3ac8eaaf.jpg?1477377566#h"
-      />
-    </div>
+    <div class="third_pic"></div>
+    <div class="fourth_pic"></div>
+    <div class="fifth_pic"></div>
+    <div class="sixth_pic"></div>
+    <div class="seventh_pic"></div>
+    <div class="eighth_pic"></div>
   </div>
 </template>
 <script>
-import imgs from "../static/img/1.jpg"
+import imgs from "../static/img/1.jpg";
 export default {
   methods: {
-      zhan(e) {
-      e.target.src=imgs;
+    zhan(e) {
+      e.target.src = imgs;
     }
-  },
-}
+  }
+};
 </script>
 <style scoped>
 .first_pic {
@@ -48,47 +54,69 @@ export default {
   width: 100%;
   height: 500px;
 }
-.br_title {
+.second_pic {
   width: 100%;
-  height: 124px;
-  background-color: #cccccc;
+  height: 558px;
+  background-color: #41249b;
   border-bottom: 4px solid #cccccc;
+}
+.br_title {
+  width: 510px;
+  height: 90px;
   font-size: 42px;
   font-weight: bold;
   color: #fff;
-  text-align: center;
-  line-height: 124px;
+  margin: 0 auto;
+  line-height: 90px;
 }
-.second_pic {
-  height: 1002px;
+.br_pic {
+  width: 100%;
+  height: 434px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+.br_pic img {
+  width: 326px;
+  height: 434px;
+}
+.br_pic img:hover {
+  opacity: 0.9;
+}
+.third_pic {
+  width: 100%;
+  height: 582px;
   overflow: hidden;
-}
-.second_pic img {
-  width: 1426px;
-  height: 1002px;
+  background: url(http://cdn.lzljmall.com/public/images/52/de/4e/9fa97d89c3ce1bae8903785c42e501ded2585200.jpg?1554350958#w)
+    center center no-repeat;
 }
 .fourth_pic {
-  height: 1034px;
+  height: 817px;
   overflow: hidden;
-}
-.fourth_pic img {
-  width: 1426px;
-  height: 1034px;
+  background: url(http://cdn.lzljmall.com/public/images/63/5f/04/ead166b404b52ce0ed6a72a5504a79b61ca57a74.jpg?1554352034#w)
+    center center no-repeat;
 }
 .fifth_pic {
-  height: 1128px;
-  overflow: hidden;
-}
-.fifth_pic img {
-  width: 1426px;
-  height: 1128px;
+  width: 100%;
+  height: 788px;
+  background: url(http://cdn.lzljmall.com/public/images/af/46/14/17ef4ba22ac4739eb6754d9ac716345320e4c69c.jpg?1554352077#w)
+    center center no-repeat;
 }
 .sixth_pic {
-  height: 3631px;
+  height: 933px;
   overflow: hidden;
+  background: url(http://cdn.lzljmall.com/public/images/ba/56/49/c4902eaaf19e573cf2aadf93b0fea010ad1897c9.jpg?1554352166#w)
+    center center no-repeat;
 }
-.sixth_pic img {
-  width: 1426px;
-  height: 3517px;
+.seventh_pic {
+  height: 955px;
+  background: url(http://cdn.lzljmall.com/public/images/c7/b1/3b/424f72da595b26b150844574b5fd4f45118be394.jpg?1554352351#w)
+    center center no-repeat;
+}
+.eighth_pic {
+  background: url(http://cdn.lzljmall.com/public/images/ae/ea/8b/740deaf467d6280fa0a26b335bf491f178ca428f.jpg?1554352006#w)
+    center bottom no-repeat;
+  height: 813px;
 }
 </style>

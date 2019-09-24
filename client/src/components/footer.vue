@@ -89,10 +89,12 @@
 }
 .slogan {
   height: 266px;
+  text-align: center;
   border-bottom: 1px solid #7d7d7d;
 }
 .page {
   width: 1200px;
+  height: 136px;
   display: flex;
   justify-content: space-around;
   padding: 60px 0;

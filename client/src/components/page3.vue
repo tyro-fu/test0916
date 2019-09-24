@@ -23,12 +23,12 @@
       </div>
     </div>
     <div class="third_pic"></div>
-    <div class="fourth_pic"></div>
+    <!-- <div class="fourth_pic"></div>
     <div class="fifth_pic"></div>
     <div class="sixth_pic"></div>
     <div class="seventh_pic"></div>
     <div class="eighth_pic"></div>
-    <div class="nineth_pic"></div>
+    <div class="nineth_pic"></div> -->
   </div>
 </template>
 <script>
@@ -67,7 +67,7 @@ export default {
   line-height: 90px;
 }
 .br_pic {
-  width: 1365px;
+  width: 100%;
   height: 326px;
   display: flex;
   justify-content: space-around;
@@ -78,14 +78,17 @@ export default {
   width: 326px;
   height: 326px;
 }
+.br_pic img:hover {
+  opacity: 0.9;
+}
 .third_pic {
-  background: url(http://cdn.lzljmall.com/public/images/49/ab/7f/6e163bb2d67238e72c03263a1ceaa4073ae966cf.jpg?1480484273#h)
+  background: url(http://cdn.lzljmall.com/public/images/aa/f4/53/d835251dc63e2cdb42592eddf993fc3b3ce10e90.jpg?1466134660#h)
     center center no-repeat;
   width: 100%;
-  height: 798px;
+  height: 3693px;
   text-align: center;
 }
-.fourth_pic {
+/* .fourth_pic {
   background: url(http://cdn.lzljmall.com/public/images/63/97/b1/53ac5708203803dad433f60b754601ce62281382.jpg?1472395505#w)
     center center no-repeat;
   text-align: center;
@@ -122,5 +125,5 @@ export default {
   height: 633px;
   background: url(http://cdn.lzljmall.com/public/images/13/a5/73/881da6a6c4cef4f464c34c3b09c63e5e7ff95dba.jpg?1466135528#w)
     center center no-repeat;
-}
+} */
 </style>

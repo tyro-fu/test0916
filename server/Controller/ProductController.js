@@ -10,9 +10,9 @@ module.exports.getProductByType=function(req,res){
 //添加商品
 module.exports.insert=function(req,res){
     console.log(req.query);
-    let {name,price,img,type,proCode,kind,prices,pdid}=req.query
+    let {name,price,img,type1,proCode,kind,prices,pdid}=req.query
     let productService=new ProductService()
-    productService.insert(name,price,img,type,proCode,kind,prices,pdid,products=>{
+    productService.insert(name,price,img,type1,proCode,kind,prices,pdid,products=>{
         res.json(products)
     })
 }

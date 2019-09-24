@@ -4,21 +4,6 @@
       <div class="right">
         <div class="login">
           <i class="icon iconfont icon-denglu"></i>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 564568c427d33a8d7709c5961297da577c882a33
-          <router-link to='/login' class="text">登录</router-link>
-          <div>|</div>
-          <router-link to='/sign' class="text">注册</router-link>
-        </div>
-        <div class="cart">
-          <i class="icon iconfont icon-gouwuche"></i>
-<<<<<<< HEAD
-          <router-link to='Cart' class="text">购物车</router-link>
-=======
-          <router-link to='/cart' class="text">购物车</router-link>
-=======
           <router-link to="/login" class="text">登录</router-link>
           <div>|</div>
           <router-link to="/sign" class="text">注册</router-link>
@@ -26,8 +11,6 @@
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
           <router-link to="/cart" class="text">购物车</router-link>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
->>>>>>> 564568c427d33a8d7709c5961297da577c882a33
         </div>
       </div>
     </div>
@@ -40,94 +23,60 @@
           />
         </div>
         <div style="display:flex">
-          <input type="text" v-model="myInput" class="search" /> <el-button class="btn" @click="submit" type="primary">搜索</el-button>
+          <input type="text" v-model="myInput" class="search" />
+          <el-button class="btn" @click="submit" type="primary">搜索</el-button>
         </div>
-       
+
         <div class="title">
           <ul>
             <li>
-              <router-link to='/middle' class="title_t">首页</router-link>
+              <router-link to="/middle" class="title_t">首页</router-link>
             </li>
-<<<<<<< HEAD
             <li v-for="(item,index) in title" :key="index">
-              <router-link :to='{path:"/classify",query:{type:item}}' class="title_t">item</router-link>
+              <router-link :to="{path:'/classify',query:{type:item}}" class="title_t">{{item}}</router-link>
             </li>
-            <!-- <li>
-              <router-link to class="title_t">窖龄酒</router-link>
-=======
-            <li>
-<<<<<<< HEAD
-              <router-link to='/classify' class="title_t">国窖1573</router-link>
-=======
-              <router-link to="/classify/国窖1573" class="title_t">国窖1573</router-link>
->>>>>>> 564568c427d33a8d7709c5961297da577c882a33
-            </li>
-            <li>
-              <router-link to="/classify/窖龄酒" class="title_t">窖龄酒</router-link>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
-            </li>
-            <li>
-              <router-link to="/classify/特曲" class="title_t">特曲</router-link>
-            </li>
-            <li>
-              <router-link to="/classify/头曲" class="title_t">头曲</router-link>
-            </li>
-            <li>
-              <router-link to="/classify/老窖藏品" class="title_t">老窖藏品</router-link>
-            </li>
-            <li>
-              <router-link to="/classify/桃花醉" class="title_t">桃花醉</router-link>
-            </li>
-            <li>
-<<<<<<< HEAD
-              <router-link to class="title_t">所有商品</router-link>
-            </li> -->
-=======
-              <router-link to="/classify/所有商品" class="title_t">所有商品</router-link>
-            </li>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
           </ul>
         </div>
       </div>
     </div>
-    <div class="nav" :class="{'is_fixed' : isFixed}">
-      <router-link to='/page1' class="navpic">
+    <div class="nav" :class="navBarFixed == true ? 'navBarWrap' :''">
+      <router-link to="/page1" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/90/b3/c4/d395e3ccba05d5ab6f67a6b90c3164d735e86f79.png?1539572088#h"
         />
         <span>国窖1573</span>
       </router-link>
-      <router-link to='/page2' class="navpic">
+      <router-link to="/page2" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/f4/37/1f/75d33f99e0bebaaa0c63c60269e763dcf0b5707d.png?1458934892#h"
         />
         <span>窖龄</span>
       </router-link>
-      <router-link to='/page3' class="navpic">
+      <router-link to="/page3" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/f5/b7/e3/6693e808118e5f3ae83bb16e41948ab91cb63841.png?1458934812#h"
         />
         <span>特曲</span>
       </router-link>
-      <router-link to='/page4' class="navpic">
+      <router-link to="/page4" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/0e/e0/f2/d127d84183af98b8344401f33f3fb6b55f6444aa.png?1458934938#h"
         />
         <span>头曲</span>
       </router-link>
-      <router-link to='/page5' class="navpic">
+      <router-link to="/page5" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/6e/4d/a0/26fecc958b66d55ad5726bde820d53ed72f551e8.png?1458935023#h"
         />
         <span>高端定制</span>
       </router-link>
-      <router-link to='/page6' class="navpic">
+      <router-link to="/page6" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/75/0c/4d/abd1db8a0ef2a68cde31b3d17f3519a493ec1f74.png?1524555122#h"
         />
         <span>百调</span>
       </router-link>
-      <router-link to='/page7' class="navpic">
+      <router-link to='page7' class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/e3/4f/db/97ee6f43f13f526703147b1e1329966e0a894aa8.png?1527849399#h"
         />
@@ -143,16 +92,31 @@ export default {
   data() {
     return {
       myInput: "",
-      isFixed: false,
-      offsetTop: 0,
-      title:['国窖1573','窖龄酒','特曲','老窖藏品','桃花醉','所有商品']
+      navBarFixed: false,
+      title: ["国窖1573", "窖龄酒", "特曲", "老窖藏品", "桃花醉", "所有商品"]
     };
   },
-  methods:{
-    submit(){
-      net.get("/source",{name:this.myInput}).then(res=>{
-        window.console.log(res)
-      })
+  mounted() {
+    window.addEventListener("scroll", this.watchScroll);
+  },
+  methods: {
+    submit() {
+      net.get("/source", { name: this.myInput }).then(res => {
+        window.console.log(res);
+      });
+    },
+    watchScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      console.log(scrollTop);
+      //  当滚动超过 90 时，实现吸顶效果
+      if (scrollTop > 280) {
+        this.navBarFixed = true;
+      } else {
+        this.navBarFixed = false;
+      }
     }
   }
 };
@@ -210,7 +174,7 @@ export default {
 .headerBox {
   height: 200px;
   padding: 20px 0;
-  /* background: lavender; */
+  background: #fff;
 }
 .middle {
   width: 800px;
@@ -230,6 +194,7 @@ export default {
   height: 32px;
   width: 358px;
   border: 2px solid #d00a00;
+  border-radius: 3px;
 }
 .search:focus {
   outline: none !important;
@@ -280,15 +245,14 @@ export default {
 }
 .nav {
   width: 100%;
-  height: 143px;
-  /* background: #666; */
+  height: 113px;
+  background: #fff;
   padding-top: 15px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* position: fixed; */
 }
 .navpic {
   text-decoration: none;
@@ -314,5 +278,12 @@ export default {
 }
 .nav .navpic span {
   margin-top: 5px;
+}
+
+.navBarWrap {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.5);
 }
 </style>
