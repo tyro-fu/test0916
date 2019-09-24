@@ -15,18 +15,12 @@
           <div class="f1">|</div>
           <div>会员中心</div>
           <div class="f1">|</div>
-          <div @click="toSign" class="change">注册</div>
+          <div>帮助中心</div>
+          <div class="f1">|</div>
+          <div>我的购物车</div>
         </div>
       </div>
-      <div class="topright">
-        <div>我的订单</div>
-        <div class="f1">|</div>
-        <div>会员中心</div>
-        <div class="f1">|</div>
-        <div>帮助中心</div>
-        <div class="f1">|</div>
-        <div>我的购物车</div>
-      </div>
+
       <div class="logoBox">
         <div class="logo">
           <div class="logiImg">
@@ -61,31 +55,6 @@
             <li class="otherGoods" v-for="(item,index) in type" :key="index">
               <a href="#" target="_blank" @click="getPro(item)">{{item}}</a>
             </li>
-            <!-- <li class="otherGoods">
-            <a href="#" target="_blank">国窖1573</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">窖龄酒</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">特曲</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">头窖藏瓶</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">桃花醉</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">所有商品</a>
-          </li>
-
-          <li class="otherGoods">
-            <a href="#" target="_blank">百调</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">热销推荐</a>
-            </li>-->
           </ul>
         </div>
       </div>
@@ -95,16 +64,6 @@
 <script>
 import net from "../utils/net";
 export default {
-<<<<<<< HEAD
-  name:"classifyTop",
-     data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1',
-        input3:"",
-     type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
-    }},
-=======
   name: "classifyTop",
   data() {
     return {
@@ -124,7 +83,6 @@ export default {
       ]
     };
   },
->>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
   methods: {
     toLogin() {
       this.$router.push("/login");
@@ -132,20 +90,11 @@ export default {
     toSign() {
       this.$router.push("/sign");
     },
-<<<<<<< HEAD
-  created(type) {
-    net
-    .get("http://localhost:8888/getProduct",{ type: type })
-    .then(res =>{
-      window.console.log("1",res)
-    })
-=======
     created(type) {
       net.get("http://localhost:8888/getProduct", { type: type }).then(res => {
         window.console.log("1", res);
       });
     }
->>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
   }
 };
 </script>

@@ -27,11 +27,6 @@ export default {
   components: {
   //   Login,
   // Sign
-<<<<<<< HEAD
-  }, mounted() {
-    this.$router.push("/");
-=======
->>>>>>> a835bd5e2c82a86685cca953a4c78761ac2b3af7
   }
 }
 

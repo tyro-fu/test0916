@@ -47,34 +47,32 @@
   </div>
 </template>
 <script>
-import LoginAndSign from '../../components/loginandsign'
-import net from '../../utils/net'
+import LoginAndSign from "../../components/loginandsign";
+import net from "../../utils/net";
 export default {
-    components: {
-        LoginAndSign
-    },
-     methods: {
+  components: {
+    LoginAndSign
+  },
+  methods: {
     ToLogin() {
       this.$router.push("/login");
     },
-    submitForm(formName){
-      this.$refs[formName].validate(vaiid => {  
-          net
-            .post(`/register`, {
-              name: this.ruleForm.name,
-              password: this.ruleForm.password
-    
-          })
-      })
+    submitForm(formName) {
+      this.$refs[formName].validate(() => {
+        net.post(`/register`, {
+          name: this.ruleForm.name,
+          password: this.ruleForm.password
+        });
+      });
     }
-    },
-    data() {
+  },
+  data() {
     return {
       ruleForm: {
         name: "",
-        password: "",
+        password: ""
       },
-      
+
       rules: {
         name: [
           { required: true, message: "请输入正确的用户名", trigger: "blur" },
@@ -84,10 +82,10 @@ export default {
         num: [{ required: true, message: "请输入电话号码", trigger: "blur" }],
         address: [{ required: true, message: "请输入地址", trigger: "blur" }]
       }
-    }
+    };
   },
   name: "Sign"
-}
+};
 </script> 
 <style>
 body {
