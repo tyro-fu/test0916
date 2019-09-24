@@ -16,8 +16,6 @@ class ProductDetailService{
     //             ob.code=1;
     //             call(ob);
     //         })
-   
-
     // }
 
 

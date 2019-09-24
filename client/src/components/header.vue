@@ -134,7 +134,7 @@ export default {
       });
     },
     handleHref(e) {
-      this.$store.commit("setoPro",e)
+      this.$store.commit("setoPro",e);
       this.$router.push({path:"/detail"})
       // window.console.log(e)
     }

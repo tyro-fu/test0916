@@ -20,7 +20,6 @@
           <div>我的购物车</div>
         </div>
       </div>
-
       <div class="logoBox">
         <div class="logo">
           <div class="logiImg">
@@ -28,12 +27,19 @@
               src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
             />
           </div>
-          <div class="iput">
-            <div>
-              <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-                <el-button slot="append" icon="el-icon-search">搜索</el-button>
-              </el-input>
+          <div class="iput postion:relative">
+            <div style="display:flex;">
+              <el-input placeholder="请输入内容" v-model="myInput" class="text input-with-select"></el-input>
+              <el-button slot="append" icon="el-icon-search" @click="submit" class="btn">搜索</el-button>
             </div>
+            <el-card class="box-card list" v-show="show">
+              <div
+                @click="handleHref(item)"
+                v-for="(item,index) in data"
+                :key="index"
+                class="text item"
+              >{{item.name}}</div>
+            </el-card>
             <div class="inpText">
               <div>国窖1573</div>
               <div class="f1">|</div>
@@ -69,7 +75,7 @@ export default {
     return {
       activeIndex: "1",
       activeIndex2: "1",
-      input3: "",
+      myInput: "",
       type: [
         "首页",
         "国窖1573",
@@ -80,10 +86,35 @@ export default {
         "所有商品",
         "百调",
         "热销推荐"
-      ]
+      ],
+      data: [],
+      show: false,
+      isSer: false,
     };
   },
   methods: {
+       handleBlur() {
+      if (this.isSer) {
+        setTimeout(() => {
+          this.show = false;
+          this.isSer = false;
+        }, 500);
+      }
+    },
+    submit() {
+      net.get("/source", { name: this.myInput }).then(res => {
+        this.data = res.data;
+        if (this.data.length !== 0) {
+          this.show = true;
+          this.isSer = true;
+        }
+      });
+    },
+    handleHref(e) {
+      this.$store.commit("setoPro",e);
+      this.$router.push({path:"/detail"})
+      // window.console.log(e)
+    },
     toLogin() {
       this.$router.push("/login");
     },
@@ -233,5 +264,23 @@ body {
 .otherGoods > a {
   color: #333;
   font-size: 14px;
+}
+.text {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn {
+  background: #d00a00;
+  border: #d00a00;
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  color: #000 !important;
+}
+.item:hover {
+  background-color: #b5b5b5;
 }
 </style>
