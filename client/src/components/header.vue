@@ -4,13 +4,13 @@
       <div class="right">
         <div class="login">
           <i class="icon iconfont icon-denglu"></i>
-          <router-link to class="text">登录</router-link>
+          <router-link to='/login' class="text">登录</router-link>
           <div>|</div>
-          <router-link to class="text">注册</router-link>
+          <router-link to='/sign' class="text">注册</router-link>
         </div>
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
-          <router-link to class="text">购物车</router-link>
+          <router-link to='/cart' class="text">购物车</router-link>
         </div>
       </div>
     </div>
@@ -31,10 +31,10 @@
             <li>
               <router-link to='/middle' class="title_t">首页</router-link>
             </li>
-            <li>
-              <router-link to class="title_t">国窖1573</router-link>
+            <li v-for="(item,index) in title" :key="index">
+              <router-link :to='{path:"/classify",query:{type:item}}' class="title_t">item</router-link>
             </li>
-            <li>
+            <!-- <li>
               <router-link to class="title_t">窖龄酒</router-link>
             </li>
             <li>
@@ -51,7 +51,7 @@
             </li>
             <li>
               <router-link to class="title_t">所有商品</router-link>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -109,7 +109,8 @@ export default {
     return {
       input: "",
       isFixed: false,
-      offsetTop: 0
+      offsetTop: 0,
+      title:['国窖1573','窖龄酒','特曲','老窖藏品','桃花醉','所有商品']
     };
   }
 };

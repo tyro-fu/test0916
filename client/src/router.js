@@ -11,7 +11,7 @@ import Detail from "./views/hx/Detail.vue";
 import Cart from './components/Cart.vue';
 import Sign from './views/wt/sign.vue';
 import Login from './views/wt/login.vue';
-// import Classify from "./views/wt/classify";
+import Classify from "./views/wt/classify";
 // import { ElLoadingComponent } from 'element-ui/types/loading';
 
 Vue.use(Router)
@@ -46,19 +46,22 @@ export default new Router({
     }
 
     , {
-      path: "detail",
+      path: "/detail",
       component: Detail
     },
     {
-      path: "cart",
+      path: "/cart",
       component: Cart
     },
     {
-      path: "sign",
+      path: "/sign",
       component: Sign
     }, {
-      path: "login",
+      path: "/login",
       component: Login
+    }, {
+      path: "/calssify",
+      component: Classify
     }
   ]
 })
