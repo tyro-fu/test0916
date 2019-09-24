@@ -56,7 +56,10 @@ export default {
           password: this.form.pwd
         })
         .then(res => {
-          window.console.log("11", res);
+          if (res.data.ob.code===1) {
+             this.$router.push("/");
+             this.$store.commit('setUesr',res.data.user)
+          }
         });
     },
     onRegister() {

@@ -130,22 +130,23 @@ export default {
     }
   },
   beforeMount() {
-    this.oPro = {
-      name: "泸州老窖 特曲酒纪念版 52度500ml 浓香型白酒高度 泸州老窖官方商城",
-      type: 4,
-      price: 478.0,
-      img:
-        "http://cdn.lzljmall.com/public/images/ea/f7/fc/7c090a6cb6373161782f4fce4e22a9e617136358.jpg?1467625690#h=http://cdn.lzljmall.com/public/images/33/0c/f6/4ad919e54fe2d1ffa9b9377256c7576fd733909a.jpg?1493688891#h",
-      detail: [
-        { proCode: "1313=123=1233", kind: "500=600=700", prices: "123=134=345" }
-      ]
-    };
+    // this.oPro = {
+    //   name: "泸州老窖 特曲酒纪念版 52度500ml 浓香型白酒高度 泸州老窖官方商城",
+    //   type: 4,
+    //   price: 478.0,
+    //   img:
+    //     "http://cdn.lzljmall.com/public/images/ea/f7/fc/7c090a6cb6373161782f4fce4e22a9e617136358.jpg?1467625690#h=http://cdn.lzljmall.com/public/images/33/0c/f6/4ad919e54fe2d1ffa9b9377256c7576fd733909a.jpg?1493688891#h",
+    //   detail: [
+    //     { proCode: "1313=123=1233", kind: "500=600=700", prices: "123=134=345" }
+    //   ]
+    // };
+    window.console.log(this.oPro)
 
     if (this.oPro != null) {
-      this.oPro.img = this.oPro.img.split("=");
-      this.oPro.proCode = this.oPro.detail[0].proCode.split("=");
-      this.oPro.kind = this.oPro.detail[0].kind.split("=");
-      this.oPro.prices = this.oPro.detail[0].prices.split("=");
+      this.oPro.img = this.oPro.img.split("==");
+      this.oPro.proCode = this.oPro.detail[0].proCode.split("==");
+      this.oPro.kind = this.oPro.detail[0].kind.split("==");
+      this.oPro.prices = this.oPro.detail[0].prices.split("==");
 
       this.oCar.name = this.oPro.name;
       this.oCar.type = this.oPro.type;

@@ -10,8 +10,13 @@
         </div>
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
+<<<<<<< HEAD
           <router-link to="/cart" class="text">购物车</router-link>
+=======
+          <router-link to="Cart" class="text">购物车</router-link>
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
         </div>
+       
       </div>
     </div>
     <div class="headerBox">
@@ -22,9 +27,22 @@
             src="http://cdn.lzljmall.com/public/images/02/90/bd/c53e6e3a47f7ff0aff88c219aa33be071cc7afca.jpg?1495770154#w"
           />
         </div>
+<<<<<<< HEAD
         <div style="display:flex">
           <input type="text" v-model="myInput" class="search" />
           <el-button class="btn" @click="submit" type="primary">搜索</el-button>
+=======
+        <div style="display:flex;position:relative">
+          <input type="text" @blur="handleBlur" v-model="myInput" class="search" />
+          <el-button class="btn" @click="submit" type="primary">搜索</el-button>
+          <el-card class="box-card list" v-show="show">
+            <div @click="handleHref(item)"
+              v-for="(item,index) in data"
+              :key="index"
+              class="text item"
+            >{{item.name}}</div>
+          </el-card>
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
         </div>
 
         <div class="title">
@@ -33,13 +51,21 @@
               <router-link to="/middle" class="title_t">首页</router-link>
             </li>
             <li v-for="(item,index) in title" :key="index">
+<<<<<<< HEAD
               <router-link :to="{path:'/classify',query:{type:item}}" class="title_t">{{item}}</router-link>
+=======
+              <router-link :to="'/classify/'+item" class="title_t">{{item}}</router-link>
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
             </li>
           </ul>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="nav" :class="navBarFixed == true ? 'navBarWrap' :''">
+=======
+    <div class="nav" :class="{'is_fixed' : isFixed}">
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
       <router-link to="/page1" class="navpic">
         <img
           src="http://cdn.lzljmall.com/public/images/90/b3/c4/d395e3ccba05d5ab6f67a6b90c3164d735e86f79.png?1539572088#h"
@@ -76,7 +102,11 @@
         />
         <span>百调</span>
       </router-link>
+<<<<<<< HEAD
       <router-link to='page7' class="navpic">
+=======
+      <router-link to="/page7" class="navpic">
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
         <img
           src="http://cdn.lzljmall.com/public/images/e3/4f/db/97ee6f43f13f526703147b1e1329966e0a894aa8.png?1527849399#h"
         />
@@ -92,6 +122,7 @@ export default {
   data() {
     return {
       myInput: "",
+<<<<<<< HEAD
       navBarFixed: false,
       title: ["国窖1573", "窖龄酒", "特曲", "老窖藏品", "桃花醉", "所有商品"]
     };
@@ -117,6 +148,38 @@ export default {
       } else {
         this.navBarFixed = false;
       }
+=======
+      isFixed: false,
+      offsetTop: 0,
+      title: ["国窖1573", "窖龄酒", "特曲", "老窖藏品", "桃花醉", "所有商品"],
+      data: [],
+      show: false,
+      isSer: false
+    };
+  },
+  methods: {
+    handleBlur() {
+      if (this.isSer) {
+        setTimeout(() => {
+          this.show = false;
+          this.isSer = false;
+        }, 500);
+      }
+    },
+    submit() {
+      net.get("/source", { name: this.myInput }).then(res => {
+        this.data = res.data;
+        if (this.data.length !== 0) {
+          this.show = true;
+          this.isSer = true;
+        }
+      });
+    },
+    handleHref(e) {
+      this.$store.commit("setoPro",e);
+      this.$router.push({path:"/detail"})
+      // window.console.log(e)
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
     }
   }
 };
@@ -279,11 +342,26 @@ export default {
 .nav .navpic span {
   margin-top: 5px;
 }
+<<<<<<< HEAD
 
 .navBarWrap {
   position: fixed;
   top: 0;
   z-index: 999;
   background: rgba(255, 255, 255, 0.5);
+=======
+.list {
+  position: absolute;
+  top: 38px;
+  z-index: 999;
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  color: #000 !important;
+}
+.item:hover {
+  background-color: #b5b5b5;
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
 }
 </style>

@@ -15,9 +15,12 @@
           <div class="f1">|</div>
           <div>会员中心</div>
           <div class="f1">|</div>
-          <div @click="toSign" class="change">注册</div>
+          <div>帮助中心</div>
+          <div class="f1">|</div>
+          <div>我的购物车</div>
         </div>
       </div>
+<<<<<<< HEAD
       <div class="topright">
         <div>我的订单</div>
         <div class="f1">|</div>
@@ -27,6 +30,8 @@
         <div class="f1">|</div>
         <div>我的购物车</div>
       </div>
+=======
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
       <div class="logoBox">
         <div class="logo">
           <div class="logiImg">
@@ -34,12 +39,19 @@
               src="http://www.lzljmall.com/public/images/bf/0d/f3/d171281ab142865952d58ee90c0ed347e8576494.png?1446521609#w"
             />
           </div>
-          <div class="iput">
-            <div>
-              <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-                <el-button slot="append" icon="el-icon-search">搜索</el-button>
-              </el-input>
+          <div class="iput postion:relative">
+            <div style="display:flex;">
+              <el-input placeholder="请输入内容" v-model="myInput" class="text input-with-select"></el-input>
+              <el-button slot="append" icon="el-icon-search" @click="submit" class="btn">搜索</el-button>
             </div>
+            <el-card class="box-card list" v-show="show">
+              <div
+                @click="handleHref(item)"
+                v-for="(item,index) in data"
+                :key="index"
+                class="text item"
+              >{{item.name}}</div>
+            </el-card>
             <div class="inpText">
               <div>国窖1573</div>
               <div class="f1">|</div>
@@ -54,42 +66,13 @@
       </div>
       <div class="nav">
         <div class="navBar">
-          <ul
-            :default-active="activeIndex"
-            class="ul-demo"
-            mode="horizontal"
-          >
+          <ul :default-active="activeIndex" class="ul-demo" mode="horizontal">
             <li class="AllGoods">
               <a href="#" target="_blank">全部商品分类</a>
             </li>
             <li class="otherGoods" v-for="(item,index) in type" :key="index">
               <a href="#" target="_blank" @click="getPro(item)">{{item}}</a>
             </li>
-            <!-- <li class="otherGoods">
-            <a href="#" target="_blank">国窖1573</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">窖龄酒</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">特曲</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">头窖藏瓶</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">桃花醉</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">所有商品</a>
-          </li>
-
-          <li class="otherGoods">
-            <a href="#" target="_blank">百调</a>
-          </li>
-          <li class="otherGoods">
-            <a href="#" target="_blank">热销推荐</a>
-            </li>-->
           </ul>
         </div>
       </div>
@@ -99,6 +82,7 @@
 <script>
 import net from "../utils/net";
 export default {
+<<<<<<< HEAD
   name:"classifyTop",
      data() {
       return {
@@ -107,21 +91,75 @@ export default {
         input3:"",
      type:['首页','国窖1573','窖龄酒','特曲','头窖藏瓶','桃花醉','所有商品','百调','热销推荐']
     }},
+=======
+  name: "classifyTop",
+  data() {
+    return {
+      activeIndex: "1",
+      activeIndex2: "1",
+      myInput: "",
+      type: [
+        "首页",
+        "国窖1573",
+        "窖龄酒",
+        "特曲",
+        "头窖藏瓶",
+        "桃花醉",
+        "所有商品",
+        "百调",
+        "热销推荐"
+      ],
+      data: [],
+      show: false,
+      isSer: false,
+    };
+  },
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
   methods: {
+       handleBlur() {
+      if (this.isSer) {
+        setTimeout(() => {
+          this.show = false;
+          this.isSer = false;
+        }, 500);
+      }
+    },
+    submit() {
+      net.get("/source", { name: this.myInput }).then(res => {
+        this.data = res.data;
+        if (this.data.length !== 0) {
+          this.show = true;
+          this.isSer = true;
+        }
+      });
+    },
+    handleHref(e) {
+      this.$store.commit("setoPro",e);
+      this.$router.push({path:"/detail"})
+      // window.console.log(e)
+    },
     toLogin() {
       this.$router.push("/login");
     },
     toSign() {
       this.$router.push("/sign");
     },
+<<<<<<< HEAD
   created(type) {
     net
     .get("http://localhost:8888/getProduct",{ type: type })
     .then(res =>{
       window.console.log("1",res)
     })
+=======
+    created(type) {
+      net.get("http://localhost:8888/getProduct", { type: type }).then(res => {
+        window.console.log("1", res);
+      });
+    }
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
   }
-}}
+};
 </script>
 <style scoped>
 a {
@@ -258,5 +296,23 @@ body {
 .otherGoods > a {
   color: #333;
   font-size: 14px;
+}
+.text {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn {
+  background: #d00a00;
+  border: #d00a00;
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  color: #000 !important;
+}
+.item:hover {
+  background-color: #b5b5b5;
 }
 </style>

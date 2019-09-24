@@ -30,7 +30,11 @@ class ProductService{
     insert(name,price,img,type1,proCode,kind,prices,pdid, call){
       
         //商品不存在执行插入操作
+<<<<<<< HEAD
             this.productModel.insert(name, img,price,type1,pdid,res=>{
+=======
+            this.productModel.insert(name, img,price,type,pdid,res=>{
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
                 this.productDetailModel.insert(proCode,kind,prices,pdid,res=>{
                     let ob={}
                     ob.msg='添加商品成功';
@@ -66,7 +70,15 @@ class ProductService{
     //搜索商品
     source(name,call){
         this.productModel.selectLikeName(name,res=>{
-            call(res);
+            res.forEach((item,index)=>{
+                this.productDetailModel.selectById(item.id,ob=>{
+                    console.log(ob);
+                    item.detail=ob
+                    if (index==res.length-1) {
+                        call(res)
+                    }
+                })
+            })
         })
     }
 }

@@ -59,6 +59,7 @@
 <script>
 import LoginAndSign from "./loginandsign";
 import Footer from "./footer";
+import net from '../utils/net'
 export default {
   name: "Cart",
   components: {
@@ -67,26 +68,7 @@ export default {
   },
   data() {
     return {
-      carts: [
-        {
-          img:
-            "http://cdn.lzljmall.com/public/images/cb/35/39/398832ce195a2a6f1cba3ab0bfee979d827a1619.jpg?1546669316#h",
-          name:
-            "泸州老窖 国窖1573 澳网冠军版 40度750ml 浓香型白酒 泸州老窖官方商城",
-          kind: "750ml",
-          count: 2,
-          price: 10888
-        },
-        {
-          img:
-            "http://cdn.lzljmall.com/public/images/cb/35/39/398832ce195a2a6f1cba3ab0bfee979d827a1619.jpg?1546669316#h",
-          name:
-            "泸州老窖 国窖1573 澳网冠军版 40度750ml 浓香型白酒 泸州老窖官方商城",
-          kind: "750ml",
-          count: 1,
-          price: 10888
-        }
-      ]
+      carts: []
     };
   },
   computed: {
@@ -106,7 +88,12 @@ export default {
       this.carts[index].count = count - 1;
     }
   },
-  created() {}
+  created() {
+    net.get('/getCart',{userId:this.$store.state.user.id}).then((res)=>{
+      this.$store.commit('setCart',res.data)
+      this.carts=this.$store.state.cart
+    })
+  }
 };
 </script>
 <style scoped lang='less'>

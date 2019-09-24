@@ -9,6 +9,7 @@ import Page5 from "./components/page5.vue";
 import Page6 from "./components/page6.vue";
 import Page7 from "./components/page7.vue";
 import Middle from "./components/middle.vue";
+<<<<<<< HEAD
 
 import Detail from "./views/hx/Detail.vue";
 
@@ -22,22 +23,33 @@ import Classify from "./views/wt/classify"
 // import { ElLoadingComponent } from 'element-ui/types/loading';
 
 
+=======
+import Detail from "./views/hx/Detail.vue";
+import Cart from './components/Cart.vue';
+import Sign from './views/wt/sign.vue';
+import Login from './views/wt/login.vue';
+import Classify from "./views/wt/classify";
+// import { ElLoadingComponent } from 'element-ui/types/loading';
+
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+<<<<<<< HEAD
   routes: [
     {
 
+=======
+  routes: [{
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
       path: "/",
-      component: Detail,
-    },
-    {
-
-      path: "/Home",
       component: Home,
       children: [{
+<<<<<<< HEAD
 
+=======
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
         path: "/page1",
         component: Page1
       }, {
@@ -55,19 +67,17 @@ export default new Router({
       }, {
         path: "/page6",
         component: Page6
-      },  {
+      }, {
         path: "/page7",
         component: Page7
-      },  {
-        path: "/",
-        component: Middle
       }, {
         path: "/middle",
         component: Middle
+      }, {
+        path: "",
+        component: Middle
       }],
-    }
-
-    , {
+    }, {
       path: "/detail",
       component: Detail
     },
@@ -86,5 +96,9 @@ export default new Router({
       component: Classify
     }
   ]
+<<<<<<< HEAD
 })
 
+=======
+})
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b

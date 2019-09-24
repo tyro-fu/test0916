@@ -40,6 +40,20 @@ export default {
 body{
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
+=======
+  text-decoration: none;
+}
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  /* margin-top: 60px; */
+>>>>>>> a0212c051eb32fdeb63a11cbe171bf98f58c1e4b
 }
 
 </style>
