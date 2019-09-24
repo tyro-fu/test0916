@@ -47,21 +47,21 @@ class CartService{
           call(res)
         })
     }
-    pay(cartList,call){
-        let ob="";
-        cartList.forEach(item => {
-            let userId=item.user_id;
-            let menuId=item.menu_id;
-            this.cartModel.updateIspay(userId,menuId,res=>{
-                ob+=res;
-            })
-        });
-        call(ob)
-    }
-    getPayed(userId,call){
-        this.cartModel.selcetPayed(userId,res=>{
-            call(res)
-        })
-    }
+    // pay(cartList,call){
+    //     let ob="";
+    //     cartList.forEach(item => {
+    //         let userId=item.user_id;
+    //         let menuId=item.menu_id;
+    //         this.cartModel.updateIspay(userId,menuId,res=>{
+    //             ob+=res;
+    //         })
+    //     });
+    //     call(ob)
+    // }
+    // getPayed(userId,call){
+    //     this.cartModel.selcetPayed(userId,res=>{
+    //         call(res)
+    //     })
+    // }
 }
 module.exports=CartService;

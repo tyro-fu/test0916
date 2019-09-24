@@ -15,7 +15,7 @@
               text-color="#666"
               active-text-color="#d00a00"
             >
-              <el-submenu v-for="(item,index) in type" :key="index">
+              <el-submenu v-for="(item,inDex) in type" :key="inDex" index>
                 <template slot="title">
                   <span @click="getPro(item)">{{item}}</span>
                 </template>
@@ -48,6 +48,7 @@
   </div>
 </template>
 <script>
+import net from "../../utils/net"
 import classifyTop from "../../components/classifyTop";
 export default {
   data() {
@@ -68,11 +69,13 @@ export default {
     }
     
   },
-  created(type) {
+  created() {
+    window.console.log("1223",this.$route.params)
+    let type=this.$route.params.type;
     net
     .get("http://localhost:8888/getProduct",{ type: type })
     .then(res =>{
-      console.log("66",res)
+      window.console.log("66",res)
     })
   },
 };

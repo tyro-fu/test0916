@@ -2,7 +2,7 @@
   <div>
     <div class="first_pic">
       <router-link to>
-        <img
+        <img  @error="zhan"
           src="http://cdn.lzljmall.com/public/images/0d/3b/7a/baf393c3bce0c2fade7c0602d82ae93a3873da02.jpg?1562811210#w"
         />
       </router-link>
@@ -10,7 +10,7 @@
     <div class="second_pic">
       <div class="num">
         <a href="#">
-          <img
+          <img  @error="zhan"
             src="http://cdn.lzljmall.com/public/images/e2/75/83/41889650341cc9cc40dea6e8fc3b78d89f326cbd.jpg?1530255354#w"
           />
         </a>
@@ -23,7 +23,7 @@
       </div>
       <div class="num">
         <a href="#">
-          <img
+          <img  @error="zhan"
             src="http://cdn.lzljmall.com/public/images/7a/12/d0/45825dd32213f021b6afe598d03c5542143da735.jpg?1530256787#w"
           />
         </a>
@@ -36,7 +36,7 @@
       </div>
       <div class="num">
         <a href="#">
-          <img
+          <img  @error="zhan"
             src="http://cdn.lzljmall.com/public/images/8a/76/e7/a5b366120e7b3a56b3922f9c9418411135f84641.jpg?1530255500#w"
           />
         </a>
@@ -49,7 +49,7 @@
       </div>
       <div class="num">
         <a href="#">
-          <img
+          <img  @error="zhan"
             src="http://cdn.lzljmall.com/public/images/67/ad/b8/aad5b39aa71bbffac8127ca4cb8c2bd21ec0a846.jpg?1530255373#w"
           />
         </a>
@@ -63,28 +63,28 @@
     </div>
     <div class="third_pic">
       <router-link to>
-        <img
+        <img  @error="zhan"
           src="http://cdn.lzljmall.com/public/images/0f/2a/2d/3bbccb069bc7e6a4619e69e681a932df63964708.jpg?1553052589#w"
         />
       </router-link>
     </div>
     <div class="fourth_pic">
       <router-link to>
-        <img
+        <img  @error="zhan"
           src="http://cdn.lzljmall.com/public/images/55/55/60/7d1e9d114945df9d189cf678db3e904ad579ef18.jpg?1562809486#w"
         />
       </router-link>
     </div>
     <div class="fifth_pic">
       <router-link to>
-        <img
+        <img  @error="zhan"
           src="http://cdn.lzljmall.com/public/images/4b/6e/16/4db6022ed3faec7e51baae8bb6587b3b0df39460.jpg?1563154717#w"
         />
       </router-link>
     </div>
     <div class="sixth_pic">
       <router-link to>
-        <img
+        <img  @error="zhan"
           src="http://cdn.lzljmall.com/public/images/78/32/01/262376f18f5653c2929042c2e6b8d33c76c9ef47.jpg?1553052631#w"
         />
       </router-link>
@@ -92,9 +92,14 @@
   </div>
 </template>
 <script>
+import imgs from "../static/img/1.jpg"
 export default {
   data() {
     return {};
+  }, methods: {
+    zhan(e) {
+      e.target.src=imgs;
+    }
   }
 };
 </script>
