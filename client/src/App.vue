@@ -39,9 +39,6 @@ export default {
 body{
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-
-=======
   text-decoration: none;
 }
 #app {
@@ -53,7 +50,6 @@ body{
   height: 100%;
   width: 100%;
   /* margin-top: 60px; */
->>>>>>> 4d8532a69269be4513818a3a985015e99197a826
 }
 
 </style>

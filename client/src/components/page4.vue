@@ -4,16 +4,16 @@
     <div class="second_pic">
       <div class="br_title">HOT BRAND / 品牌推荐</div>
       <div class="br_pic">
-        <img
+        <img @error="zhan"
           src="http://cdn.lzljmall.com/public/images/56/8d/86/b59b9717bf503580b72d506a3bc020d35dc0f100.jpg?1511165107#h"
         />
-        <img
+        <img @error="zhan"
           src="http://cdn.lzljmall.com/public/images/83/01/c2/ecd4059c6e10f371fb5b5bcfa3afcc8b8a1b1dd0.jpg?1511165117#h"
         />
-        <img
+        <img @error="zhan"
           src="http://cdn.lzljmall.com/public/images/61/cf/6a/031a1b89648d5d32b1ffed54dd16b27dedb8bc6d.jpg?1511165127#h"
         />
-        <img
+        <img @error="zhan"
           src="http://cdn.lzljmall.com/public/images/1b/01/97/6dd845ea85a252e2023e2b0ccd9d04e4a7100df6.jpg?1511245585#h"
         />
       </div>
@@ -24,7 +24,16 @@
     <div class="sixth_pic"></div>
   </div>
 </template>
-
+<script>
+import imgs from "../static/img/1.jpg"
+export default {
+  methods: {
+      zhan(e) {
+      e.target.src=imgs;
+    }
+  },
+}
+</script>
 <style scoped>
 .first_pic {
   background: url(http://cdn.lzljmall.com/public/images/44/0e/9d/28e0a7a5b9108fc812b856edda38ca654496c828.jpg?1519796453#h)
