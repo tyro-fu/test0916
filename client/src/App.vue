@@ -28,7 +28,7 @@ export default {
   //   Login,
   // Sign
   }, mounted() {
-    this.$router.push("/classify");
+    this.$router.push("/home");
   }
 }
 

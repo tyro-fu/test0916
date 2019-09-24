@@ -62,45 +62,33 @@ export default new Router({
           path: "/page5",
           component: Page5
         },
-        {
-
-      path:'/',
-      name:'home',
-      component: Home
-    },
-    {
-      path:'/cart',
-      name:'cart',
-      component: Cart
-    },
-    {
-      path:'/sign',
-      name:'sign',
-      component: Sign
-
-    },
-    {
-      path:'/login',
-      name:'login',
-      component: Login
-    },
-    {
-      path: "/", component: Home,
-      children: [
-        { path: "", component: Middle },
-        { path: "/middle", component: Middle },
-        { path: "/page1", component: Page1 },
-        { path: "/page2", component: Page2 },
-        { path: "/page3", component: Page3 },
-        { path: "/page4", component: Page4 },
-        { path: "/page5", component: Page5 }
-
-      ]
-    },{
-      path:'/classify',component:Classify
-
-    }
+        
    
       ]
+},{
+
+  path:'/',
+  name:'home',
+  component: Home
+},
+{
+  path:'/cart',
+  name:'cart',
+  component: Cart
+},
+{
+  path:'/sign',
+  name:'sign',
+  component: Sign
+
+},
+{
+  path:'/login',
+  name:'login',
+  component: Login
+},
+{
+  path:'/classify',component:Classify
+
 }]}
 )

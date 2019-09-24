@@ -4,13 +4,13 @@
       <div class="right">
         <div class="login">
           <i class="icon iconfont icon-denglu"></i>
-          <router-link to class="text">登录</router-link>
+          <router-link to='/login' class="text">登录</router-link>
           <div>|</div>
-          <router-link to class="text">注册</router-link>
+          <router-link to='/sign' class="text">注册</router-link>
         </div>
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
-          <router-link to class="text">购物车</router-link>
+          <router-link to='Cart' class="text">购物车</router-link>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
               <router-link to='/middle' class="title_t">首页</router-link>
             </li>
             <li>
-              <router-link to class="title_t">国窖1573</router-link>
+              <router-link to='/classify' class="title_t">国窖1573</router-link>
             </li>
             <li>
               <router-link to class="title_t">窖龄酒</router-link>
