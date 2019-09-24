@@ -1,13 +1,12 @@
 <template>
   <div>
-   <LoginAndSign></LoginAndSign>
-  
+    <LoginAndSign></LoginAndSign>
+
     <div class="passportMain">
       <div class="section">
         <div class="sectionLeft">
           <div class="signtitle">用户注册</div>
           <div class="signpage">
-           
             <el-form
               :model="ruleForm"
               :rules="rules"
@@ -27,7 +26,7 @@
               </el-form-item>
               <el-form-item label="地址" prop="address">
                 <el-input v-model="ruleForm.address"></el-input>
-              </el-form-item> -->
+              </el-form-item>-->
               <el-form-item>
                 <el-button type="primary" @click="submitForm('ruleForm')">立即注册</el-button>
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
@@ -36,13 +35,12 @@
           </div>
         </div>
         <div class="sectionRight">
-            <div class="sectionRightBox">
-                <div class="tologinText">已有会员账号请直接登陆</div>
-                <div>
-                    <button class="tologinBtn" @click="ToLogin">跳转到登录页</button>
-                </div>
+          <div class="sectionRightBox">
+            <div class="tologinText">已有会员账号请直接登陆</div>
+            <div>
+              <button class="tologinBtn" @click="ToLogin">跳转到登录页</button>
             </div>
-            
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +48,7 @@
 </template>
 <script>
 import LoginAndSign from '../../components/loginandsign'
+import net from '../../utils/net'
 export default {
     components: {
         LoginAndSign
@@ -57,23 +56,23 @@ export default {
      methods: {
     ToLogin() {
       this.$router.push("/login");
-    }},
-  //   submitForm(formName){
-  //     this.$refs[formName].validate(vaiid => {
-        
-  //         this.$ajax
-  //           .post(`${this.$store.state.ip}/register`, {
-  //             name: this.ruleForm.name,
-  //             password: this.ruleForm.password
+    },
+    submitForm(formName){
+      this.$refs[formName].validate(vaiid => {  
+          net
+            .post(`/register`, {
+              name: this.ruleForm.name,
+              password: this.ruleForm.password
     
-  // }}},
+          })
+      })
+    }
+    },
     data() {
     return {
       ruleForm: {
         name: "",
         password: "",
-        num: "",
-        address: ""
       },
       
       rules: {
@@ -85,11 +84,11 @@ export default {
         num: [{ required: true, message: "请输入电话号码", trigger: "blur" }],
         address: [{ required: true, message: "请输入地址", trigger: "blur" }]
       }
-    };
+    }
   },
   name: "Sign"
-};
-</script>
+}
+</script> 
 <style>
 body {
   background-color: #f8f8f8;
@@ -144,7 +143,7 @@ body {
   width: 960px;
   height: 130px;
   margin: 0px auto;
-      padding-top: 15px;
+  padding-top: 15px;
 }
 .passportMain {
   width: 100%;
@@ -181,30 +180,29 @@ body {
   padding-left: 0;
   height: 35px;
 }
-.signpage{
-    width: 630px;
-    height:290px;
-    background-color: f8f8f8;
-    border: 1px solid #E1E1E1;
- 
+.signpage {
+  width: 630px;
+  height: 290px;
+  background-color: f8f8f8;
+  border: 1px solid #e1e1e1;
 }
-.demo-ruleForm{
-    width: 500px;
-    height: 600px;
-    margin: 50px auto;
+.demo-ruleForm {
+  width: 500px;
+  height: 600px;
+  margin: 50px auto;
 }
-.sectionRightBox{
-    margin-top: 35px;
+.sectionRightBox {
+  margin-top: 35px;
 }
-.tologinText{
-margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 40px;
+.tologinText {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 40px;
 }
-.tologinBtn{
-    width: 100px;
-    height: 35px;
-    background: #3898EA;
-    color: #ddd;
+.tologinBtn {
+  width: 100px;
+  height: 35px;
+  background: #3898ea;
+  color: #ddd;
 }
 </style>

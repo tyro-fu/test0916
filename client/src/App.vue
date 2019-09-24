@@ -28,7 +28,7 @@ export default {
   //   Login,
   // Sign
   }, mounted() {
-    this.$router.push("/classify");
+    this.$router.push("/");
   }
 }
 
@@ -39,7 +39,6 @@ export default {
 body{
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   text-decoration: none;
 }
 #app {
@@ -51,9 +50,6 @@ body{
   height: 100%;
   width: 100%;
   /* margin-top: 60px; */
-=======
-
->>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
 }
 
 </style>

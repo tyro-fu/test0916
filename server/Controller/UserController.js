@@ -29,6 +29,7 @@ module.exports.login = function (req, res) {
 
 }
 module.exports.registeUser = function (req, res) {
+    console.log(req.body);
     let name = req.body.name;
     let password = req.body.password;
     let userService = new UserService()

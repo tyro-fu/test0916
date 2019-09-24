@@ -4,7 +4,6 @@
       <div class="right">
         <div class="login">
           <i class="icon iconfont icon-denglu"></i>
-<<<<<<< HEAD
           <router-link to='/login' class="text">登录</router-link>
           <div>|</div>
           <router-link to='/sign' class="text">注册</router-link>
@@ -12,15 +11,6 @@
         <div class="cart">
           <i class="icon iconfont icon-gouwuche"></i>
           <router-link to='/cart' class="text">购物车</router-link>
-=======
-          <router-link to="/login" class="text">登录</router-link>
-          <div>|</div>
-          <router-link to="/sign" class="text">注册</router-link>
-        </div>
-        <div class="cart">
-          <i class="icon iconfont icon-gouwuche"></i>
-          <router-link to="/cart" class="text">购物车</router-link>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
         </div>
       </div>
     </div>
@@ -41,19 +31,11 @@
             <li>
               <router-link to='/middle' class="title_t">首页</router-link>
             </li>
-<<<<<<< HEAD
             <li v-for="(item,index) in title" :key="index">
-              <router-link :to='{path:"/classify",query:{type:item}}' class="title_t">item</router-link>
+              <router-link :to='{path:"/classify",query:{type:item}}' class="title_t">{{item}}</router-link>
             </li>
             <!-- <li>
               <router-link to class="title_t">窖龄酒</router-link>
-=======
-            <li>
-              <router-link to="/classify/国窖1573" class="title_t">国窖1573</router-link>
-            </li>
-            <li>
-              <router-link to="/classify/窖龄酒" class="title_t">窖龄酒</router-link>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
             </li>
             <li>
               <router-link to="/classify/特曲" class="title_t">特曲</router-link>
@@ -68,13 +50,8 @@
               <router-link to="/classify/桃花醉" class="title_t">桃花醉</router-link>
             </li>
             <li>
-<<<<<<< HEAD
               <router-link to class="title_t">所有商品</router-link>
             </li> -->
-=======
-              <router-link to="/classify/所有商品" class="title_t">所有商品</router-link>
-            </li>
->>>>>>> b5199ad73e3be235fbb49b2bcad1b364f58dfb33
           </ul>
         </div>
       </div>
