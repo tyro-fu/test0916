@@ -15,12 +15,12 @@
               text-color="#666"
               active-text-color="#d00a00"
             >
-              <el-submenu index="1">
+              <el-submenu v-for="(item,inDex) in type" :key="inDex" index>
                 <template slot="title">
-                  <span>国窖1573</span>
+                  <span @click="getPro(item)">{{item}}</span>
                 </template>
               </el-submenu>
-              <el-submenu index="2">
+              <!-- <el-submenu index="2">
                 <template slot="title">
                   <span>特曲</span>
                 </template>
@@ -110,7 +110,7 @@
                 <template slot="title">
                   <span>热销推荐</span>
                 </template>
-              </el-submenu>
+              </el-submenu> -->
             </el-menu>
           </el-col>
         </el-row>
@@ -143,8 +143,15 @@
   </div>
 </template>
 <script>
+import net from "../../utils/net"
 import classifyTop from "../../components/classifyTop";
 export default {
+  data() {
+    return {
+      type:['国窖1573','特曲',' 窖龄','头曲','二曲','泸小二','高端定制','养生酒','其他','配方','官方留藏','红酒','啤酒','大区','玛格丽特葡萄汁','百调','桃花醉','百调512活动','热销推荐']
+
+    }
+  },
   components: {
     classifyTop
   },
@@ -155,7 +162,17 @@ export default {
     handleClose(key, keyPath) {
       window.console.log(key, keyPath);
     }
-  }
+    
+  },
+  created() {
+    window.console.log("1223",this.$route.params)
+    let type=this.$route.params.type;
+    net
+    .get("http://localhost:8888/getProduct",{ type: type })
+    .then(res =>{
+      window.console.log("66",res)
+    })
+  },
 };
 </script>
 <style >

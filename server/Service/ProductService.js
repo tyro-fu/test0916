@@ -9,7 +9,8 @@ class ProductService{
     getProduct(type,call){
         this.productModel.selectByType(type,res=>{
             res.forEach((item,index)=>{
-                this.productDetailModel.selectById(item.pdid,ob=>{
+                this.productDetailModel.selectById(item.id,ob=>{
+                    console.log(ob);
                     item.detail=ob
                     if (index==res.length-1) {
                         call(res)
@@ -26,11 +27,16 @@ class ProductService{
         })
     }
     //添加商品
-    insert(name,price,img,type,proCode,kind,prices, pdid,call){
+    insert(name,price,img,type,proCode,kind,prices, call){
       
         //商品不存在执行插入操作
+<<<<<<< HEAD
             this.productModel.insert(name, img,price,type,pdid,res=>{
                 this.productDetailModel.insert(proCode,kind,prices,pdid,res=>{
+=======
+            this.productModel.insert(name, img,price,type,res=>{
+                this.productDetailModel.insert(proCode,kind,prices,res=>{
+>>>>>>> 2d901bda6f66e84a2d2b7d6bc2bc32ce7bc90e60
                     let ob={}
                     ob.msg='添加商品成功';
                     ob.code=1;
